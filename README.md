@@ -9,14 +9,14 @@
 
 ## Useful Links
 
-* Notes/Instructions on how I set up my MacOS development machine: [GitLab Workstation Setup Notes](gitlab-workstation-setup-notes.md)
+* Notes/Instructions on how I set up my macOS development machine: [GitLab Workstation Setup Notes](gitlab-workstation-setup-notes.md)
 * Developer Cheatsheet which has evolved from some of my onboarding notes: [GitLab Developer Cheatsheet](https://about.gitlab.com/handbook/engineering/development/dev/create-editor/developer-cheatsheet/)
 
 ## About Me
 
-I've been a professional full-stack polyglot coder/sysadmin for 30+ years, from mainframes to cloud computing.
+I've been a professional full-stack polyglot coder/sysadmin for 30+ years, from mainframes to cloud computing. I've been primarily a full-stack web developer, since the dawn of the web in the early 1990's.
 
-Currently I'm a Senior Engineer on the [GitLab Create::Editor team](https://about.gitlab.com/handbook/engineering/development/dev/create-editor/), since November 2019 (I was hired as and still work as a full-stack engineer, but am currently classified as backend due to internal transfers).
+Currently, I'm a Senior Engineer on the [GitLab Create::Editor team](https://about.gitlab.com/handbook/engineering/development/dev/create-editor/), since November 2019 (I was hired as and still work as a full-stack engineer, but am currently classified as backend due to internal transfers).
 
 Here's my [interactive resume/CV](https://resume.thewoolleyweb.com/), which is a [SPA](https://en.wikipedia.org/wiki/Single-page_application) I created in Vue.js to helped me get my job at GitLab (and hasn't been updated since then). 
 
@@ -30,7 +30,7 @@ My personal ID is `thewoolleyman` everywhere - feel free to connect, but all opi
 
 (TODO: Why doesn't this work for my username?)
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cwoolley-gitlab&theme=github_dark&layout=compact&hide=jupyter%20notebook,matlab" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cwoolley-gitlab&theme=github_dark&layout=compact&hide=jupyter%20notebook,matlab" alt="gitlab languages" />
 
 ### GitLab Statistics
 
