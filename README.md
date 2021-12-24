@@ -24,6 +24,8 @@ My personal ID is `thewoolleyman` everywhere - feel free to connect, but all opi
 
 ## Statistics
 
+<!-- See https://gitlab.com/oregand/gitlab-readme-stats -->
+
 ### GitLab Languages
 
 (TODO: Why doesn't this work for my username?)
