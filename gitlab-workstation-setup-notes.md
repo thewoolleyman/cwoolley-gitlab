@@ -33,7 +33,7 @@ useful for shared-workstation pair-programming team environments, where you have
 workstations weekly or monthly. They are also more useful if you are a linux user, heavy
 Vim/Emacs/VSCode user, or otherwise use tools which are primarily configured through dotfiles.
 
-But in my case, for my personal workstations, which I only set up yearly or more, automation is
+But in my case, for my personal macOS workstations, which I only set up yearly or more, automation is
 not worth the maintenance overhead, in my experience.
 
 And as far as source controlled config or dotfiles, I try to have the philosophy of
