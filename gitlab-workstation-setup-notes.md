@@ -12,6 +12,10 @@
   * [JetBrains IDE Setup](#jetbrains-ide-setup)
     * [Common JetBrains IDE Setup](#common-jetbrains-ide-setup)
     * [RubyMine-Specific IDE Setup](#rubymine-specific-ide-setup)
+  * [Additional Settings](#additional-settings)
+    * [macOS Settings](#macos-settings)
+      * [macOS System Preferences Settings](#macos-system-preferences-settings)
+      * [macOS Other Settings](#macos-other-settings)
   * [Additional Tools](#additional-tools)
 
 # Overview
@@ -77,6 +81,9 @@ This helps me, hopefully it helps you!
 * Unbox machine and run through initial macOS setup, i.e. pick username, location, touch ID, etc.
 * Log into GitLab-specific Apple ID
 * Open App Store and install all updates
+* Perform all [macOS Settings](#macos-settings)
+* Install Rosetta. You will be prompted to install it when you start the first app which requires
+  it (for me it was JetBrains Toolbox)
 
 ## Migration from previous machine
 
@@ -88,16 +95,19 @@ This helps me, hopefully it helps you!
 ## Required GitLab Tools
 
 * 1Password
-  * Install and log in to GitLab account. You can use the camera to take a picture of the barcode on your old computer
+  * Install and log in to GitLab account. You can use the camera to take a picture of the barcode on
+    your old computer
   * Log into my personal 1Password vault
   * Preferences -> Accounts: remove all keyboard shortcuts (so they don't conflict with JetBrains)
   * Update other settings/vaults as desired
+* Slack for DesktopP
 * 
 
 ## GitLab Developer Environment Setup
 
 * Install Xcode from app store
-* 
+* Install Command Line Tools: `xcode-select --install`
+
 
 ### GDK Setup
 
@@ -105,14 +115,164 @@ This helps me, hopefully it helps you!
 
 ### Common JetBrains IDE Setup
 
+* Install JetBrains Toolbox (used to manage all JetBrains IDE installations)
+
 ### RubyMine-Specific IDE Setup
+
+## Additional Settings
+
+### macOS Settings
+
+#### macOS System Preferences Settings
+
+* System Preferences - Notifications
+  * NOTE: I disable all notifications. This is to prevent distracting popups during screen sharing or
+    screen recordings. My current calendar app is the only app I allow to show notifications.
+  * System Preferences -> Notifications and Focus
+    * Uncheck "Allow Notifications" for all apps except calendar app.
+  * ONGOING: Whenever any app pops up a request to show macOS notifications, always choose "Don't Allow"
+* System Preferences - Keyboard
+  * Max key repeat, shorter delay until repeat.
+  * Normal Keyboard: Use function keys as standard function keys
+  * Shortcuts -> Services -> Text: Uncheck "Search man Page Index in Terminal" ([steals binding from Jetbrains](https://stackoverflow.com/a/55747595)).
+* System Preferences - Trackpad
+  * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
+  * More Gestures: Uncheck "Swipe between pages"
+* System Preferences - Battery
+  * Battery
+    * Turn display off after 10 minutes
+    * Turn off "slightly dim the display when on battery power"
+  * Power Adapter
+    * Turn display off after 1 hour
+
+#### macOS Other Settings
+
+* Finder
+  * Preferences
+    * General
+      * Show hard disks and connected servers
+      * New Finder windows show home directory
+    * Sidebar: Show everything
+    * Advanced
+      * Show all filename extensions
+      * Keep folders on top always (check both boxes)
+  * Drag `~/workspace` to sidebar
+
+* Make everything show in Finder:
+  * Finder -> home directory
+    * Change to List view
+    * In Menu-> View -> Show View Options
+      * Show Library Folder
+      * Use as Defaults (so everything shows in list view)
+  * Show hidden files in Finder: `defaults write com.apple.finder AppleShowAllFiles True; killall Finder` (Cmd-Shift-. (period) to toggle)
+
+* set nopasswd sudoers - `sudo visudo`, change "`%admin ...`" line to read: `%admin   ALL=(ALL) NOPASSWD:ALL`
+
+* Show purchases from personal Apple account in App Store (not positive if this is right!)
+  * Set up family sharing for personal apple account and add gitlab account to personal account
+  * In App store, log into personal account.
+  * In App store, log out of personal account, then log into GitLab account. It should still
+    "remember" that you logged into the personal account, and show apps for both IDs under "Purchased By"
 
 ## Additional Tools
 
 **NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use Homebrew casks or other package managers to install and manage macOS `*.app` applications.
 
 * Google Chrome - GitLab-only browser
-  * Sign in to GitLab Google account
+  * Sign in to GitLab Google account via "Turn on Sync"
+  * Sync everything but bookmarks (these are done via syncmarx)
   * Set as default browser
-* Brave - Personal-only browser
+  * Important Chrome Extensions (these and others should sync automatically once logged into Google account)
+    * Chrome JSON Formatter extension: https://github.com/callumlocke/json-formatter
+    * [1password](https://1password.com/downloads/mac/)
+    * [syncmarx](https://syncmarx.gregmcleod.com/) bookmark syncer
+  * Log into all necessary chrome extensions
 
+* Brave - Personal-only browser
+  * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
+  * Sync everything but bookmarks (these is done via syncmarx)
+
+* iTerm2
+  * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
+  * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
+  * Appearance -> Dimming -> Dim background windows
+  * Profiles -> Default (starred) Profile -> Keys -> Left Option acts as `Esc+`
+  * Profiles -> Default -> General -> Working Directory: Select "Reuse previous session's directory"
+  * Profiles -> Default -> Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
+
+* [Rectangle](https://rectangleapp.com) (window organizer)
+  * Give accessibility permissions
+  * Remove all default keybindings, add back only (to prevent conflicts with Jetbrains defaults):
+    * ctrl-option-cmd ("smash") arrows for top/bottom/right/left
+    * smash-m for Maximize
+    * smash-n for next display
+    * smash-shift-left/up/down/right for top left/top right/bottom left/bottom right
+  * Hide menu bar icon, check for updates automatically
+
+* [Clipy](https://clipy-app.com/)
+  * Install, launch on system startup.
+  * Change Prefs:
+    * General -> max clipboard history size 2000
+    * General -> Appearance -> Status Bar icon style: none (open via shortcut if you need to access prefs)
+    * Menu -> inline: 30, inside folder: 30, characters in menu: 200
+    * Change main shortcut Ctrl+Opt+Cmd+V, disable other shortcuts (to not conflict with Jetbrains)
+
+* [Choosy](https://www.choosyosx.com/)
+  * Make default browser
+  * Rules
+    * Disable rule "Some browsers are running"
+    * Change default behavior to always open Chrome
+    * TODO: Configure apps for personal projects (Rider, Visual Studio) to open in Brave.
+  * Advanced: Start at login, don't display icon in menu bar
+
+* [Contexts](https://contexts.co) better window switcher
+  * Sidebar: Show sidebar on no display, uncheck auto adjust windows widths
+  * Command-Tab: Check "Typing characters starts fast search"
+
+* Adobe Acrobat (Pro if you have a license, Reader if you don't)
+  * Pro: Install Adobe Account Access authenticator app
+
+* MeetingBar (from App Store)
+  * TODO: Set up, required Calendar setup
+
+* Speedtest App (from App Store)
+
+* Transmit 5 (from App Store)
+
+* iStat Menus (from App Store)
+  * Check: Combined
+  * Uncheck: Time
+  * CPU
+    * Active: time graph 
+    * App usage Format: 0-100%
+  * Network
+    * Active: up/down KB/s
+  * Sensors
+    * Download and install iStat menus helper
+  * Combined
+    * Items to whow in menubar: CPU & GPU, Network
+    * Items to show in dropdown: All
+
+* Kindle (from App Store)
+
+* Krisp
+  * TODO: Install
+
+* CotEditor (from app store) - Lightweight editor
+
+* TextMate
+  * Preferences -> Projects -> Include Files Matching: `{*,.*}`
+  * Preferences -> Terminal _> Install Shell support
+  * Configure autosave: add `saveOnBlur = true` to top of `~/Library/Application\ Support/TextMate/Global.tmProperties`
+
+* [Ears](https://retina.studio/ears/) - Quickly switch audio input/output
+  * Prefs: Change devices immediately, Display notification when device changes, Start ears at login
+
+* [Timing App](https://timingapp.com) - automatic time tracking by app usage
+  * TODO: Configure - sent support email asking about migrating settings
+
+* [Warp](https://warp.dev) terminal (currently in beta, ask for invite if you want to try it)
+
+* Marked (from app store) - Markdown previewer and processor
+
+* Grand Perspective (from app store) - Disk usage visualizer
