@@ -126,11 +126,13 @@ This helps me, hopefully it helps you!
 
 ### GDK Setup
 
+
 * Make sure your SSH key is installed (see instructions above)
 * Followed Rosetta instructions based on notes from:
   * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117
   * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580
 * See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
+
 
 #### GDK Setup with Rosetta
 
@@ -143,6 +145,10 @@ This helps me, hopefully it helps you!
     * postgres failed to install, got error `.asdf/plugins/postgres/bin/install: line 45: uconv: command not found`. Had to add:
       * `PATH="/usr/local/opt/icu4c/bin:$PATH"` 
     * https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_796332993 
+
+#### GDK Configuration
+
+* Set up gdk.test as hostname: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
 
 ## JetBrains IDE Setup
 
