@@ -166,7 +166,7 @@ This helps me, hopefully it helps you!
 
 ### RubyMine-Specific IDE Setup
 
-Notes:
+#### RubyMine Project and IDE Config Setup via SCM
 
 * I use the following approach to keep my RubyMine GitLab config in source control:
   https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
@@ -174,6 +174,36 @@ Notes:
 * However, I do try to keep the following instructions updated with the current Jetbrains overridden
   settings which I use.  If you are setting up from scratch, you can follow these:
   https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
+
+#### RubyMine Manual Setup
+
+The following settings must be configured manually, even if you have copied over the
+project.
+
+##### RubyMine Plugins
+
+* Utility Plugins
+  * .env files support
+  * [Lines Sorter](https://plugins.jetbrains.com/plugin/5919-lines-sorter/)
+  * GraphQL
+  * Prettier
+  * TOML
+  * Vue.js
+  * Makefile Language
+  * Ideolog (log files)
+  * Files Watcher
+* Workflow Plugins
+  * New Relic CodeStream - GitHub, GitLab, PRs and Code Review
+  * GitLink (open GitLab code/commit links directly from IDE)
+* AI Plugins
+  * GitHub CoPilot
+  * TabNine AI Code Completion
+* Keystroke-Learning Plugins
+  * Force Shortcuts (if you are hardcore and want to be forced to use keyboard, I leave it disabled)
+  * Key Promoter X (if you want to be always reminded to use keyboard)
+  * Presentation Assistant (if you are pair programming, and want other people to see what keystrokes you are using)
+* Fun Plugins
+  * Nyan Progress Bar
 
 ## Additional Settings
 
