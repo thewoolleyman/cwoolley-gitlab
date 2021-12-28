@@ -79,6 +79,7 @@ This helps me, hopefully it helps you!
 ## Basic macOS Setup
 
 * Unbox machine and run through initial macOS setup, i.e. pick username, location, touch ID, etc.
+  * NOTE: You should use the same username as the old machine to make things easier.
 * Log into GitLab-specific Apple ID
 * Open App Store and install all updates
 * Perform all [macOS Settings](#macos-settings)
@@ -91,6 +92,21 @@ This helps me, hopefully it helps you!
   * `~/workspace` (where all my projects are)
   * `~/Desktop` contents as necessary
   * `~/Documents` contents as necessary
+* Copy over `~/.ssh` directory.
+  * Notes on SSH keys
+    * I keep my primary ssh key in `~/.ssh/id_cwoolley-gitlab`, and symlink it to `id_rsa`
+    * Then on each reboot, I load it automatically with `ssh-add -k` (and type the passphrase)
+    * I load other keys (e.g. personal) with `ssh-add ~/.ssh/other_id`. NOTE: The order loaded seems
+      to matter sometimes, not sure why!
+  * General process: Zip the whole dir, attach to a 1password secure note, then unzip on the new machine (need 1password installed).
+    I do keep copies of all individual private keys in 1password, but this is easier to copy everything
+    over at once.
+  * Old machine
+    * Zip existing dir: `tar -czf ssh_dir.tgz .ssh`
+    * Attach file 1password secure note (change dropdown to `file` type)
+  * New machine
+    * Copy file from 1password secure note
+    * Unzip to home dir: `tar -xvf ssh_dir.tgz`
 
 ## Required GitLab Tools
 
@@ -108,8 +124,25 @@ This helps me, hopefully it helps you!
 * Install Xcode from app store
 * Install Command Line Tools: `xcode-select --install`
 
-
 ### GDK Setup
+
+* Make sure your SSH key is installed (see instructions above)
+* Followed Rosetta instructions based on notes from:
+  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117
+  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580
+* See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
+
+#### GDK Setup with Rosetta
+
+* Set up Terminal app for Rosetta
+  * Right-click Terminal app icon within Finder, select Get info, under General section, check Open using Rosetta option
+  * Open Terminal normally, and then run `arch -x86_64 /bin/zsh` and it should drop you to prompt where Rosetta is default mode
+  * Verify by running arch command and it should show `i386`
+* Run GDK one-line installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md#one-line-installation
+  * Had some errors, see following for fixes:
+    * postgres failed to install, got error `.asdf/plugins/postgres/bin/install: line 45: uconv: command not found`. Had to add:
+      * `PATH="/usr/local/opt/icu4c/bin:$PATH"` 
+    * https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_796332993 
 
 ## JetBrains IDE Setup
 
@@ -276,3 +309,6 @@ This helps me, hopefully it helps you!
 * Marked (from app store) - Markdown previewer and processor
 
 * Grand Perspective (from app store) - Disk usage visualizer
+
+* VMWare Fusion
+  * Publi Tech Preview 21H1 for Apple Silicon
