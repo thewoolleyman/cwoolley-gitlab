@@ -149,8 +149,20 @@ This helps me, hopefully it helps you!
 ### Common JetBrains IDE Setup
 
 * Install JetBrains Toolbox (used to manage all JetBrains IDE installations)
+  * Log into Jetbrains account which has licenses for IDEs you use (I pay for and use a personal
+    ultimate license which allows me to use any of the IDEs)
+* Install all IDEs which you use
 
 ### RubyMine-Specific IDE Setup
+
+Notes:
+
+* I use the following approach to keep my RubyMine GitLab config in source control:
+  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
+* So, I did not configure everything from scratch upon installation.
+* However, I do try to keep the following instructions updated with the current Jetbrains overridden
+  settings which I use.  If you are setting up from scratch, you can follow these:
+  https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
 
 ## Additional Settings
 
