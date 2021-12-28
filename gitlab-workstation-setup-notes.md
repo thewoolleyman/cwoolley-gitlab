@@ -129,7 +129,12 @@ This helps me, hopefully it helps you!
 
 * Make sure your SSH key is installed (see instructions above)
 * Followed Rosetta instructions based on notes from:
-  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117
+  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117:
+    > To switch to Rosetta mode within terminal (and install Homebrew, asdf, and GDK there), we have two options:
+    >
+    > 1. Right-click Terminal app icon within Finder, select Get info, under General section, check Open using Rosetta option.
+    > 1. Open Terminal normally, and then run arch -x86_64 /bin/zsh and it should drop you to prompt where Rosetta is default mode.
+    > 1. Verify by running arch command and it should show i386.
   * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580
 * See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
 
