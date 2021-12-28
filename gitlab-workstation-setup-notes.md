@@ -219,6 +219,32 @@ Notes:
   * In App store, log out of personal account, then log into GitLab account. It should still
     "remember" that you logged into the personal account, and show apps for both IDs under "Purchased By"
 
+* Add `gst` alias to `~/.zshrc`: `alias gst='git status'`
+
+* Add following to `~/.gitconfig`
+  ```
+  [user]
+	name = Chad Woolley
+	email = cwoolley@gitlab.com
+  [alias]
+  gst = status
+  ci = commit
+  co = checkout
+  sw = switch
+  up = !git pull --rebase $(git rev-parse --abbrev-ref --symbolic @{u} | sed 's:/: :')
+  rbi = !git rebase -i $(git merge-base head master)
+  [credential]
+  helper = osxkeychain
+  [core]
+  untrackedCache = true
+  [push]
+  default = current
+  [pull]
+  rebase = true
+  [feature]
+  manyFiles = true
+  ```
+
 ## Additional Tools
 
 **NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use Homebrew casks or other package managers to install and manage macOS `*.app` applications.
