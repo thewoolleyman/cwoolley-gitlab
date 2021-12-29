@@ -129,7 +129,6 @@ This helps me, hopefully it helps you!
 
 ### GDK Setup
 
-
 * Make sure your SSH key is installed (see instructions above)
 * Followed Rosetta instructions based on notes from:
   * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117:
