@@ -162,8 +162,8 @@ This helps me, hopefully it helps you!
 
 * TODO: Git command prompt
 * TODO: steps from onboarding notes, e.g.:
-  * Searching power tips
-  * Set up overcommit
+  * TODO: Searching power tips
+  * TODO: Set up overcommit
 * TODO: GitLab dock tool
 * TODO: GitLab browser plugins
 * TODO: Development Browser Plugins (e.g. vue, vuex, etc)
