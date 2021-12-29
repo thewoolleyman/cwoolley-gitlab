@@ -9,6 +9,9 @@
   * [Required GitLab Tools](#required-gitlab-tools)
   * [GitLab Developer Environment Setup](#gitlab-developer-environment-setup)
     * [GDK Setup](#gdk-setup)
+      * [GDK Setup with Rosetta](#gdk-setup-with-rosetta)
+      * [GDK Configuration](#gdk-configuration)
+  * [Optional/Recommended GitLab Tools/Setup](#optionalrecommended-gitlab-toolssetup)
   * [JetBrains IDE Setup](#jetbrains-ide-setup)
     * [Common JetBrains IDE Setup](#common-jetbrains-ide-setup)
     * [RubyMine-Specific IDE Setup](#rubymine-specific-ide-setup)
@@ -119,8 +122,7 @@ This helps me, hopefully it helps you!
   * Log into my personal 1Password vault
   * Preferences -> Accounts: remove all keyboard shortcuts (so they don't conflict with JetBrains)
   * Update other settings/vaults as desired
-* Slack for DesktopP
-* 
+* Slack for Desktop
 
 ## GitLab Developer Environment Setup
 
@@ -140,7 +142,6 @@ This helps me, hopefully it helps you!
   * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580
 * See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
 
-
 #### GDK Setup with Rosetta
 
 * Set up Terminal app for Rosetta
@@ -156,6 +157,16 @@ This helps me, hopefully it helps you!
 #### GDK Configuration
 
 * Set up gdk.test as hostname: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
+
+## Optional/Recommended GitLab Tools/Setup
+
+* TODO: Git command prompt
+* TODO: steps from onboarding notes, e.g.:
+  * Searching power tips
+  * Set up overcommit
+* TODO: GitLab dock tool
+* TODO: GitLab browser plugins
+* TODO: Development Browser Plugins (e.g. vue, vuex, etc)
 
 ## JetBrains IDE Setup
 
