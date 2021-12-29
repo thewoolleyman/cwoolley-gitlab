@@ -12,6 +12,9 @@
   * [JetBrains IDE Setup](#jetbrains-ide-setup)
     * [Common JetBrains IDE Setup](#common-jetbrains-ide-setup)
     * [RubyMine-Specific IDE Setup](#rubymine-specific-ide-setup)
+      * [RubyMine Plugins](#rubymine-plugins)
+      * [RubyMine Project and IDE Config Setup via SCM](#rubymine-project-and-ide-config-setup-via-scm)
+      * [RubyMine Manual Setup](#rubymine-manual-setup)
   * [Additional Settings](#additional-settings)
     * [macOS Settings](#macos-settings)
       * [macOS System Preferences Settings](#macos-system-preferences-settings)
@@ -166,19 +169,8 @@ This helps me, hopefully it helps you!
 
 ### RubyMine-Specific IDE Setup
 
-#### RubyMine Project and IDE Config Setup via SCM
-
-* I use the following approach to keep my RubyMine GitLab config in source control:
-  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
-* So, I did not configure everything from scratch upon installation.
-* However, I do try to keep the following instructions updated with the current Jetbrains overridden
-  settings which I use.  If you are setting up from scratch, you can follow these:
-  https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
-
-#### RubyMine Manual Setup
-
-The following settings must be configured manually, even if you have copied over the
-project.
+Note: Ensure you install all plugins FIRST, before configuring setup, so any
+plugin-specific configuration entries will be present.
 
 ##### RubyMine Plugins
 
@@ -204,6 +196,24 @@ project.
   * Presentation Assistant (if you are pair programming, and want other people to see what keystrokes you are using)
 * Fun Plugins
   * Nyan Progress Bar
+
+#### RubyMine Project and IDE Config Setup via SCM
+
+* I use the following approach to keep my RubyMine GitLab config in source control:
+  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
+* However, this may not restore all settings! Even if you use this approach,
+  you should still go through the manual setup below to ensure all settings are
+  restored
+
+#### RubyMine Manual Setup
+
+All overridden RubyMine settings are documented here:
+https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
+
+I try to keep them updated with the current Jetbrains overridden settings which I use.
+
+You can use these to configure a new RubyMine installation, or to check for
+any settings which were missed by the SCM-based setup described above.
 
 ## Additional Settings
 
@@ -232,6 +242,12 @@ project.
     * Turn display off after 1 hour
 
 #### macOS Other Settings
+
+* iCloud
+  * Set up iCloud for gitlab ID
+    * Set up Find My Mac
+    * Uncheck Mail and Calendar
+    * Check Keychain and Find My Mac
 
 * Finder
   * Preferences
@@ -265,8 +281,8 @@ project.
 * Add following to `~/.gitconfig`
   ```
   [user]
-	name = Chad Woolley
-	email = cwoolley@gitlab.com
+    name = Chad Woolley
+    email = cwoolley@gitlab.com
   [alias]
   gst = status
   ci = commit
