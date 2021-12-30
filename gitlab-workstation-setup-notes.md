@@ -23,6 +23,9 @@
       * [macOS System Preferences Settings](#macos-system-preferences-settings)
       * [macOS Other Settings](#macos-other-settings)
   * [Additional Tools](#additional-tools)
+  * [Virtual Machine Setup](#virtual-machine-setup)
+    * [VMWare Fusion](#vmware-fusion)
+      * [Windows 11 under VMWare Fusion](#windows-11-under-vmware-fusion)
 
 # Overview
 
@@ -447,5 +450,27 @@ any settings which were missed by the SCM-based setup described above.
 
 * Grand Perspective (from app store) - Disk usage visualizer
 
-* VMWare Fusion
-  * Publi Tech Preview 21H1 for Apple Silicon
+## Virtual Machine Setup
+
+TODO: Work In Progress, Incomplete!
+
+### VMWare Fusion
+
+* Install Public Tech Preview 21H1 for Apple Silicon (or later)
+
+#### Windows 11 under VMWare Fusion
+
+Info:
+
+* See https://machow2.com/windows-on-m1-mac/
+* NOTE: There are many posts about people having issues downloading the Windows 11 ARM ISO, but 
+  the instructions below worked for me.
+
+Setup:
+
+* Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
+  * You have to register for the insider program: https://insider.windows.com/en-us/register
+  * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
+* Then convert the VHDX file to a vmware-compatible disk image
+  * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
+  * Note that this will be a windows executatable, so you need a windows machine to run it on!
