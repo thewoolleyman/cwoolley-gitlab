@@ -123,6 +123,8 @@ This helps me, hopefully it helps you!
   * Preferences -> Accounts: remove all keyboard shortcuts (so they don't conflict with JetBrains)
   * Update other settings/vaults as desired
 * Slack for Desktop
+  * Sign into GitLab workspace (via Okta)
+  * Sign in to any additional workspaces you may have under your personal email (sign in to slack.com and choose from list)
 
 ## GitLab Developer Environment Setup
 
@@ -160,13 +162,40 @@ This helps me, hopefully it helps you!
 
 ## Optional/Recommended GitLab Tools/Setup
 
-* TODO: Git command prompt
-* TODO: steps from onboarding notes, e.g.:
-  * TODO: Searching power tips
-  * TODO: Set up overcommit
-* TODO: GitLab dock tool
-* TODO: GitLab browser plugins
-* TODO: Development Browser Plugins (e.g. vue, vuex, etc)
+* Git command prompt
+  * I use the `~/.git-prompt.sh` script as described in
+    [this blog post](https://about.gitlab.com/blog/2016/12/08/git-tips-and-tricks/#see-the-repository-status-in-your-terminals-prompt),
+    with some customizations. I have the following in my `~/.zshrc`:
+    ```sh
+    # Git prompt
+    GIT_PS1_SHOWCOLORHINTS=true
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWUNTRACKEDFILES=true
+    GIT_PS1_SHOWUPSTREAM="auto verbose name git"
+    source ~/.git-prompt.sh
+    
+    # shows branch name
+    precmd () { __git_ps1 "%1~" "$ " " (%s)" }
+    ```
+
+* Set up browser to search like a pro with Chrome keyword shortcuts: https://about.gitlab.com/handbook/tools-and-tips/searching/
+  * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
+* Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/
+* Set up Google Drive syncing
+  * See instructions: https://about.gitlab.
+    com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
+    page to new app name "Drive for Desktop")
+  * Use "Stream Files" for GitLab account
+  * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
+    a custom location like "~/Google Drive Personal Account"
+* Browser plugins (These will sync automatically through Chrome profile):
+  * Deluminate
+  * Window Namer and Restorer
+  * Snowplow Inspector
+  * GitPod
+  * GitLab Notify
+  * Vuejs Devtools
+  * Apollo Client Devtools
 
 ## JetBrains IDE Setup
 
@@ -250,6 +279,9 @@ any settings which were missed by the SCM-based setup described above.
     * Turn off "slightly dim the display when on battery power"
   * Power Adapter
     * Turn display off after 1 hour
+* System Preferences - Display - Display Settings...
+  * Turn off "Automatically Adjust Brightness"
+  * Turn off "True Tone"
 
 #### macOS Other Settings
 
