@@ -27,12 +27,6 @@ My personal ID is `thewoolleyman` everywhere - feel free to connect, but all opi
 
 <!-- See https://gitlab.com/oregand/gitlab-readme-stats -->
 
-### GitLab Languages
-
-(TODO: Why doesn't this work for my username?)
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cwoolley-gitlab&theme=github_dark&layout=compact&hide=jupyter%20notebook,matlab" alt="gitlab languages" />
-
 ### GitLab Statistics
 
 ![GitLab Stats](https://gitlab-readme-stats.vercel.app/api?username=cwoolley-gitlab&show_icons=true&theme=dark)
