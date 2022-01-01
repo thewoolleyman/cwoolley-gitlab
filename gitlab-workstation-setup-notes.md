@@ -199,6 +199,7 @@ This helps me, hopefully it helps you!
   * GitLab Notify
   * Vuejs Devtools
   * Apollo Client Devtools
+* TODO: network monitor
 
 ## JetBrains IDE Setup
 
@@ -450,6 +451,10 @@ any settings which were missed by the SCM-based setup described above.
 
 * Grand Perspective (from app store) - Disk usage visualizer
 
+* TODO: Calendar app
+
+* TODO: Meeting reminder tool
+
 ## Virtual Machine Setup
 
 TODO: Work In Progress, Incomplete!
@@ -468,9 +473,28 @@ Info:
 
 Setup:
 
-* Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
-  * You have to register for the insider program: https://insider.windows.com/en-us/register
-  * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
-* Then convert the VHDX file to a vmware-compatible disk image
-  * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
-  * Note that this will be a windows executatable, so you need a windows machine to run it on!
+* These steps need to be performed on an existing Windows machine. Alternately, you can contact me
+  (@cwoolley-gitlab) for a copy of the VMDK vmware disk image (it's 10gig).
+  * Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
+    * You have to register for the insider program: https://insider.windows.com/en-us/register
+    * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
+  * Then convert the VHDX file to a vmware-compatible VMDK disk image
+    * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
+    * Note that this will be a windows executatable, so you need a windows machine to run it on!
+    * Use starwind converter to convert the file with the "local file" option
+  * SCP (using Powershell) the VMDK to your macOS workstation
+* On the mac, start VMWare Fusion and create a new virtual machine from the VMDK you 
+  created/obtained above.
+* Networking (TODO: In progress)
+  * Network did not work on install - doesn't matter if you use NAT/Bridged or whatever.
+  * Currently researching how to set it up. Looks like it may work if you use the Microsoft 
+    debug adapter.  Links:
+    * https://www.reddit.com/r/vmware/comments/obpg4c/windows_11_on_arm/
+    * https://juniper.github.io/contrail-windows-docs/For%20developers/Debugging/Kernel_Debugging/
+    * http://www.mistyprojects.co.uk/documents/BCDEdit/files/commands.6.3.9600.htm#dbgsettings
+  * steps (TODO: in progress...)
+    * In VM, set networking to NAT, get network info for it
+    * In windows VM, open command prompt in administrator mode (right click)
+      * `dbgedit /debug on`
+      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with your IP range schema & yyyyy must be >49152, I used 50000)
+        * e.g.: ???
