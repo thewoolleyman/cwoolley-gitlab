@@ -188,6 +188,7 @@ This helps me, hopefully it helps you!
   * See instructions: https://about.gitlab.
     com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
     page to new app name "Drive for Desktop")
+  * Use Version: 54.0.2.0 (Apple Silicon) or later
   * Use "Stream Files" for GitLab account
   * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
     a custom location like "~/Google Drive Personal Account"
@@ -485,16 +486,23 @@ Setup:
   * SCP (using Powershell) the VMDK to your macOS workstation
 * On the mac, start VMWare Fusion and create a new virtual machine from the VMDK you 
   created/obtained above.
-* Networking (TODO: In progress)
-  * Network did not work on install - doesn't matter if you use NAT/Bridged or whatever.
-  * Currently researching how to set it up. Looks like it may work if you use the Microsoft 
-    debug adapter.  Links:
+* Networking
+  * Network did not work on install. Skip networking for for now during initial install.
+  * It will work if you use the Microsoft debug adapter. Links with more info:
     * https://www.reddit.com/r/vmware/comments/obpg4c/windows_11_on_arm/
     * https://juniper.github.io/contrail-windows-docs/For%20developers/Debugging/Kernel_Debugging/
     * http://www.mistyprojects.co.uk/documents/BCDEdit/files/commands.6.3.9600.htm#dbgsettings
-  * steps (TODO: in progress...)
-    * In VM, set networking to NAT, get network info for it
-    * In windows VM, open command prompt in administrator mode (right click)
-      * `dbgedit /debug on`
-      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with your IP range schema & yyyyy must be >49152, I used 50000)
-        * e.g.: ???
+  * Steps to setup debug adapter:
+    * The link above says to manually install the debug adapter, but for me it was already 
+      installed (perhaps because it's a preview build)
+    * In VM, set networking to Bridged ("Wifi").
+    * Pick a valid and available IP address to use on your local network (e.g. something in DHCP 
+      range)
+    * In windows VM, open Powershell in administrator mode (right click). This is under "All 
+      Apps" -> "Windows Tools"
+      * `bcdedit /debug on`
+      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with
+         a valid and unused IP in range & yyyyy must be >49152, I used 50000)
+        * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
+* You should now have a basic working windows VM with functional networking. You may want to take a
+  snapshot of the VM at this point before further customization.
