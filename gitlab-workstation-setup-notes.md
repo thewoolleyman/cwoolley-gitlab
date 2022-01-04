@@ -131,7 +131,6 @@ This helps me, hopefully it helps you!
 * Zoom Preferences:
   * General: Use Dual Monitors -> checked
   * General: Enter full screen when starting or joining a meeting -> unchecked
-  * 
 
 ## GitLab Developer Environment Setup
 
