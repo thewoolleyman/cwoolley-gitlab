@@ -128,6 +128,10 @@ This helps me, hopefully it helps you!
 * Slack for Desktop
   * Sign into GitLab workspace (via Okta)
   * Sign in to any additional workspaces you may have under your personal email (sign in to slack.com and choose from list)
+* Zoom Preferences:
+  * General: Use Dual Monitors -> checked
+  * General: Enter full screen when starting or joining a meeting -> unchecked
+  * 
 
 ## GitLab Developer Environment Setup
 
@@ -505,4 +509,4 @@ Setup:
          a valid and unused IP in range & yyyyy must be >49152, I used 50000)
         * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
 * You should now have a basic working windows VM with functional networking. You may want to take a
-  snapshot of the VM at this point before further customization.
+  snapshot of the VM at this point before further customization. 
