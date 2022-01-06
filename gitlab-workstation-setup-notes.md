@@ -28,6 +28,7 @@
     * [Parallels Desktop Pro](#parallels-desktop-pro)
       * [Ubuntu Desktop under Parallels](#ubuntu-desktop-under-parallels)
       * [Windows 11 under Parallels](#windows-11-under-parallels)
+      * [macOS under Parallels](#macos-under-parallels)
     * [VMWare Fusion](#vmware-fusion)
       * [Ubuntu Desktop under VMWare Fusion](#ubuntu-desktop-under-vmware-fusion)
       * [Windows 11 under VMWare Fusion](#windows-11-under-vmware-fusion)
@@ -492,6 +493,11 @@ NOTE: this is a headless ubuntu server, with no desktop or GUI.
 
 * In parallels macos menu icon, open "Control Center"
 * Click "+" to create a new windows 11 virtual machine
+
+#### MacOS under Parallels
+
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new MacOS virtual machine
 
 ### VMWare Fusion
 
