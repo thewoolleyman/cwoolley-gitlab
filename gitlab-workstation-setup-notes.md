@@ -462,6 +462,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 
 * Grand Perspective (from app store) - Disk usage visualizer
 
+* Visual Studio for Mac - For .NET development (F#)
+
 * TODO: Calendar app
 
 * TODO: Meeting reminder tool
