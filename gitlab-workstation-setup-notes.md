@@ -463,9 +463,38 @@ any settings which were missed by the SCM-based setup described above.
 
 TODO: Work In Progress, Incomplete!
 
+### Ubuntu Under Multipass
+
+* Download and install multipass: 
+  https://multipass.run/?_ga=2.76096215.374552197.1641435791-1890642347.1641435791
+* Install an image with multipass: `multipass launch --name linux1`
+* Run a shell on the image: `multipass exec linux1 -- bash`
+
+### Parallels Desktop Pro
+
+* Download and install Parallels Desktop:
+  https://www.parallels.com/products/desktop/download
+
+#### Ubuntu Desktop under Parallels
+
+* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
+* Install ISO under parallels
+
+#### Windows 11 under Parallels Desktop
+
+* After parallels install and registration, it will prompt you to download and install windwows 
+  11 automatically.
+
 ### VMWare Fusion
 
 * Install Public Tech Preview 21H1 for Apple Silicon (or later)
+
+#### Ubuntu Desktop under VMWare Fusion
+
+* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
+* Install ISO under VMWare
+  * Choose to boot Ubuntu from grub menu
+  * Choose "normal installation", and check "Install third party software..."
 
 #### Windows 11 under VMWare Fusion
 
