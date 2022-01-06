@@ -454,7 +454,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Prefs: Change devices immediately, Display notification when device changes, Start ears at login
 
 * [Timing App](https://timingapp.com) - automatic time tracking by app usage
-  * TODO: Configure - sent support email asking about migrating settings
+  * Ensure that video calls show notifications, and all Timing notifications are allowed in system 
+    settings with highest visibility level.
+  * TODO: Configure rest of settings
 
 * [Warp](https://warp.dev) terminal (currently in beta, ask for invite if you want to try it)
 
