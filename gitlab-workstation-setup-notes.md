@@ -24,7 +24,12 @@
       * [macOS Other Settings](#macos-other-settings)
   * [Additional Tools](#additional-tools)
   * [Virtual Machine Setup](#virtual-machine-setup)
+    * [Ubuntu Server under Multipass](#ubuntu-server-under-multipass)
+    * [Parallels Desktop Pro](#parallels-desktop-pro)
+      * [Ubuntu Desktop under Parallels](#ubuntu-desktop-under-parallels)
+      * [Windows 11 under Parallels](#windows-11-under-parallels)
     * [VMWare Fusion](#vmware-fusion)
+      * [Ubuntu Desktop under VMWare Fusion](#ubuntu-desktop-under-vmware-fusion)
       * [Windows 11 under VMWare Fusion](#windows-11-under-vmware-fusion)
 
 # Overview
@@ -354,7 +359,8 @@ any settings which were missed by the SCM-based setup described above.
 
 ## Additional Tools
 
-**NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use Homebrew casks or other package managers to install and manage macOS `*.app` applications.
+**NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use 
+Homebrew casks or other package managers to install and manage macOS `*.app` applications.**
 
 * Google Chrome - GitLab-only browser
   * Sign in to GitLab Google account via "Turn on Sync"
@@ -463,7 +469,9 @@ any settings which were missed by the SCM-based setup described above.
 
 TODO: Work In Progress, Incomplete!
 
-### Ubuntu Under Multipass
+### Ubuntu Server Under Multipass
+
+NOTE: this is a headless ubuntu server, with no desktop or GUI.
 
 * Download and install multipass: 
   https://multipass.run/?_ga=2.76096215.374552197.1641435791-1890642347.1641435791
@@ -477,13 +485,13 @@ TODO: Work In Progress, Incomplete!
 
 #### Ubuntu Desktop under Parallels
 
-* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
-* Install ISO under parallels
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new ubuntu virtual machine
 
-#### Windows 11 under Parallels Desktop
+#### Windows 11 under Parallels
 
-* After parallels install and registration, it will prompt you to download and install windwows 
-  11 automatically.
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new windows 11 virtual machine
 
 ### VMWare Fusion
 
