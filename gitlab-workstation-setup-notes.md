@@ -202,6 +202,8 @@ This helps me, hopefully it helps you!
     page to new app name "Drive for Desktop")
   * Use Version: 54.0.2.0 (Apple Silicon) or later
   * Use "Stream Files" for GitLab account
+    * In Finder left pane for drive account, right click "My Drive" -> Offline Access -> 
+      Available offline
   * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
     a custom location like "~/Google Drive Personal Account"
 * Browser plugins (These will sync automatically through Chrome profile):
