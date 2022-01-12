@@ -131,6 +131,9 @@ This helps me, hopefully it helps you!
   * Log into my personal 1Password vault
   * Preferences -> Accounts: remove all keyboard shortcuts (so they don't conflict with JetBrains)
   * Update other settings/vaults as desired
+* 1Password for Safari
+  * After installing 1password for mac, go to Safari Prefs -> Extensions
+    * Check "1Password"
 * Slack for Desktop
   * Sign into GitLab workspace (via Okta)
   * Sign in to any additional workspaces you may have under your personal email (sign in to slack.com and choose from list)
@@ -466,9 +469,39 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 
 * Visual Studio for Mac - For .NET development (F#)
 
-* TODO: Calendar app
+* Mac Calendar App Prefs (required for MeetingBar app)
+  * General
+    * Start week on: Monday
+    * Day starts at: 5AM
+    * Day ends at: Midnight
+    * Uncheck: show birthdays, show holidays
+  * Accounts (ensure you have 1Password safari extension enabled first)
+    * Disable iCloud
+    * Add Google GitLab account (will need to auth with okta)
+    * Add Google personal account
 
-* TODO: Meeting reminder tool
+* MeetingBar (from App Store) - Meeting reminder app
+  * First, ensure you have calendars set up in Mac calendar app.  If you do, do it, then restart the
+    MeetingBar app. Otherwise calendars may not show up.
+  * Install options
+    * Launch after login screen
+    * Send notifications to join meeting: 1 minute before
+    * Set up Calendars:
+      * Ignore default "Work" and "Home", add work and personal google accounts using default 
+        calendar app
+      * Add Work calendar from work google account
+      * Add Personal calendar from personal google account
+  * Preferences -> Appearance
+    * Show events for Today and Tomorrow
+    * Status Bar icon: Calendar
+    * Shorten title to 15 characters
+    * Time: Show
+    * Show only events starting in 60 minutes
+    * Time format: 12 hour
+    * Check "details in submenu"
+
+* Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
+  previous machine.
 
 ## Virtual Machine Setup
 
