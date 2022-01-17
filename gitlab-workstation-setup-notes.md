@@ -160,7 +160,8 @@ This helps me, hopefully it helps you!
 this should be the default setup**
 
 * TODO: Set this up. QUESTION: Will I need to have a completely separate GDK install directory,
-to avoid conflicts with different compilations for Apple Silicon vs. Rosetta?
+to avoid conflicts with different compilations for Apple Silicon vs. Rosetta? Asked
+here: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_812063146
 
 #### GDK Setup with Rosetta
 
