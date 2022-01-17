@@ -502,6 +502,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Time format: 12 hour
     * Check "details in submenu"
 
+* Cron - Calendar app
+  * cron.com - currently early access, need invite. 
+
 * Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
   previous machine.
 
