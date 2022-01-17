@@ -46,8 +46,9 @@ personal work and activities, while of course always following all
 ## Philosophy and Background
 
 These are the steps that I used to set up my development workstation.
-They are based on [this similar page](https://github.com/thewoolleyman/workstation/blob/master/README.md), which I have used to document the setup
-of my personal workstations for the last several years, but this one is specific to my GitLab development environment.
+They are based on [this similar page](https://github.com/thewoolleyman/workstation/blob/master/README.md),
+which I have used to document the setup of my personal workstations for the last several years, but
+this one is specific to my GitLab development environment.
 
 
 These steps are all intended to
@@ -65,7 +66,8 @@ But in my case, for my personal macOS workstations, which I only set up every ye
 automation is not worth the maintenance overhead, in my experience.
 
 And as far as source controlled config or dotfiles, I try to have the philosophy of
-**_"just learn to use the defaults, unless they are missing or inconvenient"_**. And, my primary development environment is JetBrains IDEs, not Vim/Emacs/VSCode, which means that
+**_"just learn to use the defaults, unless they are missing or inconvenient"_**.
+And, my primary development environment is JetBrains IDEs, not Vim/Emacs/VSCode, which means that
 for any given dev ecosystem, almost all basic things "just work out of the box" with
 little or no configuration required (yes, I'm a JetBrains stan, feel free to schedule
 a meeting with me if you'd like to learn how it can make you more productive ;) )
@@ -232,6 +234,11 @@ plugin-specific configuration entries will be present.
 
 ##### RubyMine Plugins
 
+* DISABLE bundled Markdown plugin. It has some nice features, but it slows down scrolling and can 
+  cause unwanted spacing or edits when attempting to format lists or numbered lists.
+  * NOTE: If you are editing tables, code blocks, etc., it may be useful to temporarily 
+   enable the bundled Markdown plugin. 
+  * TODO: Revisit later and see if it gets better.
 * Utility Plugins
   * .env files support
   * [Lines Sorter](https://plugins.jetbrains.com/plugin/5919-lines-sorter/)
