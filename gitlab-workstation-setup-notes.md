@@ -281,9 +281,12 @@ any settings which were missed by the SCM-based setup described above.
 
 * System Preferences - Notifications
   * NOTE: I disable all notifications. This is to prevent distracting popups during screen sharing or
-    screen recordings. My current calendar app is the only app I allow to show notifications.
+    screen recordings, with the following exceptions:
+    * My current calendar app (currently Cron)
+    * My current calendar notifications app (currently MeetingBar)
+    * Time-tracking app and plugin (currently Timing and Timing Tracker)
   * System Preferences -> Notifications and Focus
-    * Uncheck "Allow Notifications" for all apps except calendar app.
+    * Uncheck "Allow Notifications" for all apps except exceptions listed above.
   * ONGOING: Whenever any app pops up a request to show macOS notifications, always choose "Don't Allow"
 * System Preferences - Keyboard
   * Max key repeat, shorter delay until repeat.
@@ -503,7 +506,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Check "details in submenu"
 
 * Cron - Calendar app
-  * cron.com - currently early access, need invite. 
+  * cron.com - currently early access, need invite.
+  * Connect work and personal accounts
+  * Allow notifications
 
 * Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
   previous machine.
