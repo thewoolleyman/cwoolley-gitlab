@@ -7,10 +7,11 @@
 * [Setup Notes](#setup-notes)
   * [Basic macOS Setup](#basic-macos-setup)
   * [Required GitLab Tools](#required-gitlab-tools)
-  * [GitLab Developer Environment Setup](#gitlab-developer-environment-setup)
+  * [GitLab Developer Environment](#gitlab-developer-environment)
     * [GDK Setup](#gdk-setup)
+      * [GDK Setup with Apple Silicon](#gdk-setup-with-apple-silicon)
       * [GDK Setup with Rosetta](#gdk-setup-with-rosetta)
-      * [GDK Configuration](#gdk-configuration)
+    * [GDK Configuration](#gdk-configuration)
   * [Optional/Recommended GitLab Tools/Setup](#optionalrecommended-gitlab-toolssetup)
   * [JetBrains IDE Setup](#jetbrains-ide-setup)
     * [Common JetBrains IDE Setup](#common-jetbrains-ide-setup)
@@ -143,7 +144,7 @@ This helps me, hopefully it helps you!
   * General: Use Dual Monitors -> checked
   * General: Enter full screen when starting or joining a meeting -> unchecked
 
-## GitLab Developer Environment Setup
+## GitLab Developer Environment
 
 * Install Xcode from app store
 * Install Command Line Tools: `xcode-select --install`
@@ -151,19 +152,23 @@ This helps me, hopefully it helps you!
 ### GDK Setup
 
 * Make sure your SSH key is installed (see instructions above)
-* Followed Rosetta instructions based on notes from:
-  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739788117:
-    > To switch to Rosetta mode within terminal (and install Homebrew, asdf, and GDK there), we have two options:
-    >
-    > 1. Right-click Terminal app icon within Finder, select `Get info`, under `General` section, check `Open using Rosetta` option.
-    > 1. Open Terminal normally, and then run `arch -x86_64 /bin/zsh` and it should drop you to prompt where Rosetta is default mode.
-    > 1. Verify by running `arch` command and it should show `i386`.
-  * https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580
 * See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
+
+#### GDK Setup with Apple Silicon
+
+**NOTE: Now that https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159 is closed,
+this should be the default setup**
+
+* TODO: Set this up. QUESTION: Will I need to have a completely separate GDK install directory,
+to avoid conflicts with different compilations for Apple Silicon vs. Rosetta?
 
 #### GDK Setup with Rosetta
 
+**NOTE: Now that https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159 is closed,
+there should be no need to do this Rosetta setup. I've left it here for future reference.**
+
 * Set up Terminal app for Rosetta
+  * (from https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580)
   * Right-click Terminal app icon within Finder, select Get info, under General section, check Open using Rosetta option
   * Open Terminal normally, and then run `arch -x86_64 /bin/zsh` and it should drop you to prompt where Rosetta is default mode
   * Verify by running arch command and it should show `i386`
@@ -173,7 +178,7 @@ This helps me, hopefully it helps you!
       * `PATH="/usr/local/opt/icu4c/bin:$PATH"` 
     * https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_796332993 
 
-#### GDK Configuration
+### GDK Configuration
 
 * Set up gdk.test as hostname: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
 
