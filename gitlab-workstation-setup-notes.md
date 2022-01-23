@@ -205,6 +205,10 @@ there should be no need to do this Rosetta setup. I've left it here for future r
   * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
 * Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/
 * Set up Google Drive syncing
+  * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
+    "My Drive". There seems to be a bug in Google Drive that causes it to ignore if you toggle
+    the "Finder -> (right click) -> Offline Access -> Online Only", and not recurse to subfolders,
+    and then it will download files in subfolders and quickly fill up terabytes of local disk space.   
   * See instructions: https://about.gitlab.
     com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
     page to new app name "Drive for Desktop")
