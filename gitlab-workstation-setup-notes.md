@@ -402,6 +402,10 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
   * Sync everything but bookmarks (these is done via syncmarx)
 
+* Bartender 4 - Manage MacOS Menu Items on MacBooks with camera notch
+  * Menu Bar Item Spacing - Small
+  * Only show necessary/desired menu items
+
 * iTerm2
   * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
   * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
