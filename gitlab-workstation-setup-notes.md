@@ -561,6 +561,13 @@ NOTE: this is a headless ubuntu server, with no desktop or GUI.
 
 * In parallels macos menu icon, open "Control Center"
 * Click "+" to create a new ubuntu virtual machine
+* Notes on using port forwarding to access mac GDK host from ubuntu:
+  * See https://linuxize.com/post/how-to-setup-ssh-tunneling/
+  * Set up SSH keys appropriately
+  * Run port forwarding commands (from ubuntu):
+    * `ssh -L 3000:gdk.test:3000 cwoolley@gdk.test` (rails)
+    * `ssh -L 2222:gdk.test:2222 cwoolley@gdk.test` (git)
+  * Then access at `localhost` from ubuntu
 
 #### Windows 11 under Parallels
 
