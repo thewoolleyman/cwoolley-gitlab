@@ -402,6 +402,11 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
   * Sync everything but bookmarks (these is done via syncmarx)
 
+* Docker
+  * Download and install docker desktop.
+  * IMPORTANT NOTE: Ensure you are in compliance with the Docker license. If you are using it for
+    GitLab work other than experimentation and learning, you must obtain a license.
+
 * Bartender 4 - Manage MacOS Menu Items on MacBooks with camera notch
   * Menu Bar Item Spacing - Small
   * Only show necessary/desired menu items
