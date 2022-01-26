@@ -539,10 +539,11 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
   previous machine.
 
-* tldr - better man page alternative
+* [tldr](https://tldr.sh/) - better man page alternative
   * `brew install tldr`
 
-
+* [ugrep](https://github.com/Genivia/ugrep#readme) better grep alternative
+  * `brew install ugrep`
 
 
 
