@@ -539,6 +539,18 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
   previous machine.
 
+* tldr - better man page alternative
+  * `brew install tldr`
+
+
+
+
+
+
+
+
+
+
 ## Virtual Machine Setup
 
 TODO: Work In Progress, Incomplete!
@@ -567,7 +579,7 @@ NOTE: this is a headless ubuntu server, with no desktop or GUI.
   * Run port forwarding commands (from ubuntu):
     * `ssh -L 3000:gdk.test:3000 cwoolley@gdk.test` (rails)
     * `ssh -L 2222:gdk.test:2222 cwoolley@gdk.test` (git)
-  * Then access at `localhost` from ubuntu
+  * Then access at `localhost` from ubuntumind
 
 #### Windows 11 under Parallels
 
