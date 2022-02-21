@@ -542,10 +542,15 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [tldr](https://tldr.sh/) - better man page alternative
   * `brew install tldr`
 
-* [ugrep](https://github.com/Genivia/ugrep#readme) better grep alternative
+* [ugrep](https://github.com/Genivia/ugrep#readme) - better grep alternative
   * `brew install ugrep`
 
+* [ripgrep](https://github.com/BurntSushi/ripgrep#installation) - better grep alternative
+  * `brew install ripgrep`
 
+* [fzf](https://github.com/junegunn/fzf) - fuzzy finder
+  * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
+  * `brew install fzf`
 
 
 
