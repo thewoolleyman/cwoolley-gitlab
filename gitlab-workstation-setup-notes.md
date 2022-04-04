@@ -309,6 +309,8 @@ any settings which were missed by the SCM-based setup described above.
   * Max key repeat, shorter delay until repeat.
   * Normal Keyboard: Use function keys as standard function keys
   * Shortcuts -> Services -> Text: Uncheck "Search man Page Index in Terminal" ([steals binding from Jetbrains](https://stackoverflow.com/a/55747595)).
+* System Preferences - Language & Region - Advanced
+  * First day of week: Monday (used by other apps such as Timing)
 * System Preferences - Trackpad
   * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
   * More Gestures: Uncheck "Swipe between pages"
