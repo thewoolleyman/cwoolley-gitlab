@@ -390,6 +390,8 @@ any settings which were missed by the SCM-based setup described above.
 **NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use 
 Homebrew casks or other package managers to install and manage macOS `*.app` applications.**
 
+* (See also this great list of CLI tools from the always-awesome @b0rk (https://twitter.com/b0rk): https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/)
+
 * Google Chrome - GitLab-only browser
   * Sign in to GitLab Google account via "Turn on Sync"
   * Sync everything but bookmarks (these are done via syncmarx)
@@ -553,8 +555,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [fzf](https://github.com/junegunn/fzf) - fuzzy finder
   * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
   * `brew install fzf`
-
-
 
 
 
