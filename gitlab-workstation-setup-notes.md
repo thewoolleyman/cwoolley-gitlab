@@ -33,6 +33,7 @@
     * [VMWare Fusion](#vmware-fusion)
       * [Ubuntu Desktop under VMWare Fusion](#ubuntu-desktop-under-vmware-fusion)
       * [Windows 11 under VMWare Fusion](#windows-11-under-vmware-fusion)
+  * [Containers](#containers)    
 
 # Overview
 
@@ -652,3 +653,18 @@ Setup:
         * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
 * You should now have a basic working windows VM with functional networking. You may want to take a
   snapshot of the VM at this point before further customization. 
+
+
+## Containers
+
+TODO: Setup supported container (i.e. Docker, Kubernetes) support.
+
+See the following issue for discussion and links on various/preferred tools and support:
+
+https://gitlab.com/gitlab-com/business-technology/team-member-enablement/issue-tracker/-/issues/1787
+
+Possible tools:
+* Docker Desktop
+* Rancher Desktop
+* Colima
+* nerdctl + lima
