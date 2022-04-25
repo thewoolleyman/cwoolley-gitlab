@@ -657,14 +657,14 @@ Setup:
 
 ## Containers
 
-TODO: Setup supported container (i.e. Docker, Kubernetes) support.
+TODO: Document setup of container (i.e. Docker, Kubernetes) support and tools.
 
 See the following issue for discussion and links on various/preferred tools and support:
 
 https://gitlab.com/gitlab-com/business-technology/team-member-enablement/issue-tracker/-/issues/1787
 
-Possible tools:
-* Docker Desktop
+See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop) for details. Some possible tool options are:
+* Docker engine with multipass
 * Rancher Desktop
 * Colima
 * nerdctl + lima
