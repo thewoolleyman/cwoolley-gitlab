@@ -252,11 +252,14 @@ keep this mostly up to date with my currently curated list.
 
 TODO: Find a way to easily export this list instead of manually curating it.
 
-* DISABLE bundled Markdown plugin. It has some nice features, but it slows down scrolling and can 
-  cause unwanted spacing or edits when attempting to format lists or numbered lists.
-  * NOTE: If you are editing tables, code blocks, etc., it may be useful to temporarily 
-   enable the bundled Markdown plugin. 
-  * TODO: Revisit later and see if it gets better.
+* Note on Markdown plugin:
+  * The Markdown plugin used to be buggy and slow, but it has gotten better in recent releases.
+  * If you use it on main GitLab repos, you will probably want change the setting:
+    * Languages and Settings -> Markdown: Automatic assistance in the editor: Turn off
+    * Otherwise the plugin will prevent numbering of ordered lists with all `1.`
+      and forces them to be sequential.
+      See bug: https://youtrack.jetbrains.com/issue/IDEA-292704/Do-not-automatically-number-lists-in-markdown
+
 * Utility Plugins
   * .env files support
   * [Lines Sorter Plus](https://plugins.jetbrains.com/plugin/18564-lines-sorter-plus)
