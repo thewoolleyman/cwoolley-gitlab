@@ -245,6 +245,13 @@ plugin-specific configuration entries will be present.
 
 ##### RubyMine Plugins
 
+This list changes often for various reasons. Some of these I use often, some I don't. Sometimes,
+JetBrains will promote a third-party plugin to a default Jetbrains-provided plugin, or build
+it into the IDE. Sometimes plugins are renamed or break in latest versions. But I try to
+keep this mostly up to date with my currently curated list. 
+
+TODO: Find a way to easily export this list instead of manually curating it.
+
 * DISABLE bundled Markdown plugin. It has some nice features, but it slows down scrolling and can 
   cause unwanted spacing or edits when attempting to format lists or numbered lists.
   * NOTE: If you are editing tables, code blocks, etc., it may be useful to temporarily 
@@ -252,26 +259,32 @@ plugin-specific configuration entries will be present.
   * TODO: Revisit later and see if it gets better.
 * Utility Plugins
   * .env files support
-  * [Lines Sorter](https://plugins.jetbrains.com/plugin/5919-lines-sorter/)
-  * GraphQL
-  * Prettier
-  * TOML
-  * Vue.js
-  * Makefile Language
+  * [Lines Sorter Plus](https://plugins.jetbrains.com/plugin/18564-lines-sorter-plus)
+  * Rainbow Brackets - different colored bracket and parenthesis matching (https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
+  * String Manipulation - it, uh, manipulates strings (https://plugins.jetbrains.com/plugin/2162-string-manipulation)
   * Ideolog (log files)
   * Files Watcher
 * Workflow Plugins
-  * New Relic CodeStream - GitHub, GitLab, PRs and Code Review
-  * GitLink (open GitLab code/commit links directly from IDE)
-* AI Plugins
-  * GitHub CoPilot
-  * TabNine AI Code Completion
+  * [GitLink](https://plugins.jetbrains.com/plugin/8183-gitlink) - easily open repo web links directly from code
+  * [CodeStream (by NewRelic)](https://plugins.jetbrains.com/plugin/12206-new-relic-codestream-github-gitlab-prs-and-code-review) - MRs/PRs and Code 
+* AI Coding Assistance Plugins
+  * [GitHub CoPilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)
+  * [Tabnine](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-code-completion-js-java-python-ts-rust-go-php--more)
+* Personal Productivity
+  * [CodeTime](https://plugins.jetbrains.com/plugin/15507-codetime) - static analysis and reports of coding patterns
 * Keystroke-Learning Plugins
   * Force Shortcuts (if you are hardcore and want to be forced to use keyboard, I leave it disabled)
   * Key Promoter X (if you want to be always reminded to use keyboard)
   * Presentation Assistant (if you are pair programming, and want other people to see what keystrokes you are using)
 * Fun Plugins
   * Nyan Progress Bar
+* Language/Coding Plugins
+  * GraphQL
+  * Prettier
+  * TOML
+  * Vue.js
+  * Makefile Language
+  * 
 
 #### RubyMine Project and IDE Config Setup via SCM
 
