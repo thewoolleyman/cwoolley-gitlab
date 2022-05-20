@@ -77,8 +77,9 @@ Anyway, this means that there's relatively few config file entries I need to dir
 and therefore it's not worth the overhead to manage it in source control,
 but instead just document the entries here. As noted above, I do have a process for
 [managing my JetBrains config](https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab)
-in source control, but this is primarily to let me identify/revert any unexpected breaking changes,
-not for setting up a new workstation.
+in source control. This is primarily to let me identify/revert any unexpected breaking changes,
+but it was also handy to save some time setting up Jetbrains a new workstation. However it didn't
+capture every config change; some stuff still needed manual re-setup for a new install.
 
 So, what follows are a list of the steps I've taken and tools I've installed to set up my
 GitLab workstation. Not everything is documented in full detail, and I've installed many other
