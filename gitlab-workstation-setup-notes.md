@@ -232,7 +232,16 @@ there should be no need to do this Rosetta setup. I've left it here for future r
 
 ## JetBrains IDE Setup
 
+There's a few sub-sections in this "Jetbrains IDE Setup" section. They go in a logical order that will result in the easiest
+and smoothest experience. I've tried to indicate which ones are **_REQUIRED_**, **_RECOMMENDED_**, or **_OPTIONAL_**
+
 ### Common JetBrains IDE Setup
+
+#### JetBrains Toolbox Installation
+
+I consider the usage of JetBrains Toolbox **_REQUIRED_**. I **_DO NOT_** recommend trying to use Homebrew or manual installation
+to manage your JetBrains installations. Toolbox makes everything easier, there's no reason to not
+use it.
 
 * Install JetBrains Toolbox (used to manage all JetBrains IDE installations)
   * Log into Jetbrains account which has licenses for IDEs you use (I pay for and use a personal
@@ -241,10 +250,18 @@ there should be no need to do this Rosetta setup. I've left it here for future r
 
 ### RubyMine-Specific IDE Setup
 
+The following sub-sections are mainly designed for RubyMine, but much of it is also
+applicable to other JetBrains IDEs, especially when using them within the GitLab
+environment.
+
 Note: Ensure you install all plugins FIRST, before configuring setup, so any
 plugin-specific configuration entries will be present.
 
-##### RubyMine Plugins
+#### RubyMine Plugins
+
+All of these plugins are **__OPTIONAL_** but many are very useful and some could be considered
+a **_REQUIREMENT_**. I recommend you review each one and make a decision whether you think it
+will be useful for you.
 
 This list changes often for various reasons. Some of these I use often, some I don't. Sometimes,
 JetBrains will promote a third-party plugin to a default Jetbrains-provided plugin, or build
@@ -292,6 +309,11 @@ TODO: Find a way to easily export this list instead of manually curating it.
 
 #### RubyMine Project and IDE Config Setup via SCM
 
+**NOTE: THIS IS A CUSTOM APPROACH I CAME UP WITH, IT IS _OPTIONAL_ AND _ADVANCED_.
+I _DO NOT RECOMMEND_ it for people new to JetBrains.**
+But if you are a dedicated JetBrains user, this approach may come in useful across upgrades, and especially when
+setting up a new workstation in the future**
+
 * I use the following approach to keep my RubyMine GitLab config in source control:
   https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
 * However, this may not restore all settings! Even if you use this approach,
@@ -299,6 +321,9 @@ TODO: Find a way to easily export this list instead of manually curating it.
   restored
 
 #### RubyMine Manual Setup
+
+**If you use RubyMine or other Jetbrains IDEs, I _RECOMMEND_ that you at least review the following
+settings, and decide if any are useful for you**
 
 All overridden RubyMine settings are documented here:
 https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
