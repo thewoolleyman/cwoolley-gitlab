@@ -257,6 +257,22 @@ environment.
 Note: Ensure you install all plugins FIRST, before configuring setup, so any
 plugin-specific configuration entries will be present.
 
+#### Storing RubyMine Project and IDE Config in Git SCM
+
+**NOTE: THIS SECTION DESCRIBES A CUSTOM APPROACH I CAME UP WITH, IT IS _OPTIONAL_ AND _ADVANCED_.
+I _DO NOT RECOMMEND_ it for people new to JetBrains.**
+But if you are a dedicated JetBrains user, this approach may come in useful across upgrades, and especially when
+setting up a new workstation in the future**
+
+* I use the following approach to keep my RubyMine GitLab config in source control:
+  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
+* However, this may not restore all settings! Even if you use this approach,
+  you should still go through the manual setup below to ensure all settings are
+  restored.
+* This approachis also kind of flaky. The credentials on the repository sync
+  are currently particularly problematic; syncing only seems to work when you
+  exit the VM.  
+
 #### RubyMine Plugins
 
 All of these plugins are **__OPTIONAL_** but many are very useful and some could be considered
@@ -306,19 +322,6 @@ TODO: Find a way to easily export this list instead of manually curating it.
   * Vue.js
   * Makefile Language
   * 
-
-#### RubyMine Project and IDE Config Setup via SCM
-
-**NOTE: THIS IS A CUSTOM APPROACH I CAME UP WITH, IT IS _OPTIONAL_ AND _ADVANCED_.
-I _DO NOT RECOMMEND_ it for people new to JetBrains.**
-But if you are a dedicated JetBrains user, this approach may come in useful across upgrades, and especially when
-setting up a new workstation in the future**
-
-* I use the following approach to keep my RubyMine GitLab config in source control:
-  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
-* However, this may not restore all settings! Even if you use this approach,
-  you should still go through the manual setup below to ensure all settings are
-  restored
 
 #### RubyMine Manual Setup
 
