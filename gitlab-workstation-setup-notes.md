@@ -181,6 +181,29 @@ there should be no need to do this Rosetta setup. I've left it here for future r
       * `PATH="/usr/local/opt/icu4c/bin:$PATH"` 
     * https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_796332993 
 
+#### Homebrew installation and architecture notes
+
+**NOTE: I originally installed my entire GDK under `x86_64` architecture, so if you install it under `arm64` architecture,
+you may have different results.**
+
+Homebrew will be automatically installed as part of the GDK setup.
+
+On the M1 Macs, there's two options for Homebrew setup - you can have a single Homebrew installation for both
+`arch` architectures (`arm64` and `x86_64`, as described above), or you can have separate dedicated homebrew installs
+for each architecture.
+
+Currently, I am using a single install. Occasionally a tool installed via `brew` will fail to compile under the `arm64`
+architecture (for example, this happened with `wget` I believe).
+
+In this case, you can open a new terminal, run `arch -x86_64 /bin/zsh`, and then re-attempt the `brew install ...` command.
+
+In my experience, this results in a compiled executable which will work fine even when called from a terminal/process using
+`arm64` architecture.
+
+Again, YMMV, please open an issue if you find anything notable or different I should mention here.
+
+Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes, but not today.
+
 ### GDK Configuration
 
 * Set up gdk.test as hostname: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
