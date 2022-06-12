@@ -326,6 +326,7 @@ TODO: Find a way to easily export this list instead of manually curating it.
   * String Manipulation - it, uh, manipulates strings (https://plugins.jetbrains.com/plugin/2162-string-manipulation)
   * Ideolog (log files)
   * Files Watcher
+  * [CamelCase](https://plugins.jetbrains.com/plugin/7160-camelcase) - switch between cases with Option+Shift+U
 * Workflow Plugins
   * [GitLink](https://plugins.jetbrains.com/plugin/8183-gitlink) - easily open repo web links directly from code
   * [CodeStream (by NewRelic)](https://plugins.jetbrains.com/plugin/12206-new-relic-codestream-github-gitlab-prs-and-code-review) - MRs/PRs and Code 
