@@ -478,10 +478,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
   * Sync everything but bookmarks (these is done via syncmarx)
 
-* Docker
-  * Download and install docker desktop.
-  * IMPORTANT NOTE: Ensure you are in compliance with the Docker license. If you are using it for
-    GitLab work other than experimentation and learning, you must obtain a license.
+* Docker or other Containerization Tools
+  * See the [Containers](#containers) section below for details. 
 
 * Bartender 4 - Manage MacOS Menu Items on MacBooks with camera notch
   * Menu Bar Item Spacing - Small
@@ -728,6 +726,8 @@ Setup:
 
 ## Containers
 
+**IMPORTANT NOTE: Before using Docker Desktop, ensure you are in compliance with the Docker license.**
+
 TODO: Document setup of container (i.e. Docker, Kubernetes) support and tools.
 
 See the following issue for discussion and links on various/preferred tools and support:
@@ -739,3 +739,4 @@ See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handboo
 * Rancher Desktop
 * Colima
 * nerdctl + lima
+* Other???
