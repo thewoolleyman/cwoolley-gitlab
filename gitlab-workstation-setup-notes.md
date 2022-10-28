@@ -502,7 +502,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * smash-m for Maximize
     * smash-n for next display
     * smash-shift-left/up/down/right for top left/top right/bottom left/bottom right
-  * Hide menu bar icon, check for updates automatically
+  * In config settings (gear icon): Change "Repeated commands" to "Cycle 1/2, 2/3, and 1/3 on half actions"
+  * Hide menu bar icon, check for updates automatically (Use Spotlight to show config when needed)
 
 * [Clipy](https://clipy-app.com/)
   * Install, launch on system startup.
