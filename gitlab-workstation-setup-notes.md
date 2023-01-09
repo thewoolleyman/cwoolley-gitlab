@@ -185,6 +185,9 @@ there should be no need to do this Rosetta setup. I've left it here for future r
 
 #### Homebrew installation and architecture notes
 
+**UPDATE: I have now switched my homebrew to be setup from scratch under `arm64` architecture (i.e. under `/opt/homebrew`), so the
+rest of this section is mostly outdated. I'll update/delete it later**
+
 **NOTE: I originally installed my entire GDK under `x86_64` architecture, so if you install it under `arm64` architecture,
 you may have different results.**
 
