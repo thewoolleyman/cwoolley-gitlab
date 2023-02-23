@@ -251,11 +251,13 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
 * Browser plugins (These will sync automatically through Chrome profile):
   * Deluminate
   * Window Namer and Restorer
+  * Tab Manager Plus for Chrome
   * Snowplow Inspector
   * GitPod
   * GitLab Notify
   * Vuejs Devtools
   * Apollo Client Devtools
+  * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
 * TODO: network monitor
 
 ## JetBrains IDE Setup
