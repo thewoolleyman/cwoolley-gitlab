@@ -336,6 +336,7 @@ TODO: Find a way to easily export this list instead of manually curating it.
   * [GitLink](https://plugins.jetbrains.com/plugin/8183-gitlink) - easily open repo web links directly from code
   * [CodeStream (by NewRelic)](https://plugins.jetbrains.com/plugin/12206-new-relic-codestream-github-gitlab-prs-and-code-review) - MRs/PRs and Code
     * In Preferences -> Tools -> Codestream: Turn off "Show line-level blame". It's annoying, I'll open the gutter if I want to see the blame, this isn't VS Code! ;)
+    * I ended up disabling this one, I never used it much. I either use the GitLab Web UI or the GitLab Merge Requests plugin. It also seems to crash frequently and clutter the context menus with useless stuff.
   * [GitLab Merge Requests](https://plugins.jetbrains.com/plugin/18689-gitlab-merge-requests) - still in beta and seems buggy, but UI is promising. In-IDE diffs and inline commenting on diffs.
 * AI Coding Assistance Plugins
   * [GitHub CoPilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)
