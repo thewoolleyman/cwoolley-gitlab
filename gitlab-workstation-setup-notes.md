@@ -357,6 +357,14 @@ TODO: Find a way to easily export this list instead of manually curating it.
   * Makefile Language
   * 
 
+#### GitLab-specific Rubymine Project Structure Settings
+
+Here is a screenshot of my current Project Structure settings. 
+
+The [exclusions are especially important, because these help reduce indexing time](https://www.jetbrains.com/help/ruby/indexing.html#exclude).
+
+![gitlab-rubymine-project-structure](https://gitlab.com/cwoolley-gitlab/cwoolley-gitlab/uploads/c2a75b6f5b5e88f67ad1acd3dbb6ee7c/gitlab-rubymine-project-structure.png)
+
 #### RubyMine Manual Setup
 
 **If you use RubyMine or other Jetbrains IDEs, I _RECOMMEND_ that you at least review the following
