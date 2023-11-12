@@ -411,6 +411,8 @@ any settings which were missed by the SCM-based setup described above.
 * System Preferences - Display - Display Settings...
   * Turn off "Automatically Adjust Brightness"
   * Turn off "True Tone"
+* SYstem Preferences - Keyboard
+  * Change "Press 'globe' key" from default "Show emoji and symbols" to "Do Nothing". Prevents it from popping up when accidentally hitting it instead of control on Apple keyboard. Use `Ctrl-Cmd-Space` instead to bring up emoji and symbols "Character Viewer" window.
 
 #### macOS Other Settings
 
