@@ -23,11 +23,3 @@ Currently, I'm a Senior Engineer on the [GitLab Create::Editor team](https://abo
 Here's my [interactive resume/CV](https://resume.thewoolleyweb.com/), which is a [SPA](https://en.wikipedia.org/wiki/Single-page_application) I created in Vue.js to helped me get my job at GitLab (and hasn't been updated since then). 
 
 My personal ID is `thewoolleyman` everywhere - feel free to connect, but all opinions expressed elsewhere are mine only (and usually unfiltered), and do not represent GitLab.
-
-## Statistics
-
-<!-- See https://gitlab.com/oregand/gitlab-readme-stats -->
-
-### GitLab Statistics
-
-![GitLab Stats](https://gitlab-readme-stats.vercel.app/api?username=cwoolley-gitlab&show_icons=true&theme=dark)
