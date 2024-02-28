@@ -541,6 +541,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Sidebar: Show sidebar on no display, uncheck auto adjust windows widths
   * Command-Tab: Check "Typing characters starts fast search"
 
+* [Clocker](https://apps.apple.com/us/app/clocker/id1056643111?mt=12) from app store
+  * Date/Time Zone app for Mac menu bar
+
 * Adobe Acrobat (Pro if you have a license, Reader if you don't)
   * Pro: Install Adobe Account Access authenticator app
 
@@ -550,6 +553,7 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Speedtest App (from App Store)
 
 * Transmit 5 (from App Store)
+  * Useful for uploading files to S3/Blobstore
 
 * iStat Menus (from App Store)
   * Check: Combined
@@ -570,12 +574,15 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Krisp
   * TODO: Install
 
-* CotEditor (from app store) - Lightweight editor
+* [Zed](https://zed.dev/)
+  * Fast Collaborative editor
 
 * TextMate
   * Preferences -> Projects -> Include Files Matching: `{*,.*}`
   * Preferences -> Terminal _> Install Shell support
   * Configure autosave: add `saveOnBlur = true` to top of `~/Library/Application\ Support/TextMate/Global.tmProperties`
+
+* CotEditor (from app store) - Lightweight editor
 
 * [Ears](https://retina.studio/ears/) - Quickly switch audio input/output
   * Prefs: Change devices immediately, Display notification when device changes, Start ears at login
@@ -585,7 +592,7 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     settings with highest visibility level.
   * TODO: Configure rest of settings
 
-* [Warp](https://warp.dev) terminal (currently in beta, ask for invite if you want to try it)
+* [Warp](https://warp.dev) terminal
 
 * Marked (from app store) - Markdown previewer and processor
 
@@ -629,8 +636,11 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Connect work and personal accounts
   * Allow notifications
 
+* [Alfred](https://www.alfredapp.com/)
+  * Productivity app.
+
 * Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
-  previous machine.
+  previous machine. Alfred seems to be an alternative that does everything.
 
 * [tldr](https://tldr.sh/) - better man page alternative
   * `brew install tldr`
@@ -644,9 +654,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [fzf](https://github.com/junegunn/fzf) - fuzzy finder
   * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
   * `brew install fzf`
-
-
-
 
 ## Virtual Machine Setup
 
