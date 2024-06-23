@@ -248,16 +248,7 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
       Available offline
   * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
     a custom location like "~/Google Drive Personal Account"
-* Browser plugins (These will sync automatically through Chrome profile):
-  * Deluminate
-  * Window Namer and Restorer
-  * Tab Manager Plus for Chrome
-  * Snowplow Inspector
-  * GitPod
-  * GitLab Notify
-  * Vuejs Devtools
-  * Apollo Client Devtools
-  * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
+* GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
 * TODO: network monitor
 
 ## JetBrains IDE Setup
@@ -495,6 +486,24 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Brave - Personal-only browser
   * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
   * Sync everything but bookmarks (these is done via syncmarx)
+
+* Browser plugins (These will sync automatically through Chrome profile). Some of these are in chrome, some are in Brave, some in both. Depends on usage of the plugin:
+  * 1Password
+  * Choosy
+  * Deluminate
+  * Window Namer and Restorer
+  * Tab Manager Plus for Chrome
+  * Snowplow Inspector
+  * GitPod
+  * GitLab Notify
+  * Vuejs Devtools
+  * Apollo Client Devtools
+  * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
+  * [GitLab Web Debugger](https://chromewebstore.google.com/detail/gitlab-web-debugger/pjpihpogiidfbgdbmkmmhileaijeakan)
+  * [Conventional Comments button](https://chromewebstore.google.com/detail/conventional-comments/pagggmojbbphjnpcjeeniigdkglamffk?hl=en-US&utm_source=ext_sidebar)
+
+* 1Password CLI
+  * https://developer.1password.com/docs/cli/shell-plugins/gitlab/
 
 * Docker or other Containerization Tools
   * See the [Containers](#containers) section below for details. 
