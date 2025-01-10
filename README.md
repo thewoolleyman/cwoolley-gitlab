@@ -14,6 +14,10 @@
 * Developer Cheatsheet which has evolved from some of my onboarding notes: [GitLab Developer Cheatsheet](https://about.gitlab.com/handbook/engineering/development/dev/create/ide/developer-cheatsheet/)
 * How I manage my JetBrains RubyMine config in source control: [https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab](https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab)
 
+## My 2024 GitLab Wrapped report
+
+https://cwoolley-gitlab.gitlab.io/gitlab-wrapped
+
 ## About Me
 
 I've been a professional full-stack polyglot coder/sysadmin for 30+ years, from mainframes to cloud computing. I've been primarily a full-stack web developer, since the dawn of the web in the early 1990's.
