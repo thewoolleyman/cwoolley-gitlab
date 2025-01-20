@@ -253,6 +253,17 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
 
 ## JetBrains IDE Setup
 
+### UPDATE - See the JetBrains section in the GitLab handbook!
+
+Since the time that I wrote these setup docs, I have created a
+section in the GitLab handbook dedicated to Jetbrains IDEs, and their configuration and setup.
+There will be additional and updated info there. See:
+
+- [JetBrains IDEs](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/)
+- [Common JetBrains configuration and setup](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/setup-and-config/)
+
+### Overview
+
 There's a few sub-sections in this "Jetbrains IDE Setup" section. They go in a logical order that will result in the easiest
 and smoothest experience. I've tried to indicate which ones are **_REQUIRED_**, **_RECOMMENDED_**, or **_OPTIONAL_**
 
