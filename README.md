@@ -16,11 +16,20 @@
 
 ## About Me
 
-I've been a professional full-stack polyglot coder/sysadmin for 30+ years, from mainframes to cloud computing. I've been primarily a full-stack web developer, since the dawn of the web in the early 1990's.
+- I've been a professional full-stack polyglot coder/sysadmin for 30+ years, from mainframes to cloud computing. I've been primarily a full-stack web developer, since the dawn of the web in the early 1990's.
+- Currently, I'm a Staff Fullstack Engineer on the [GitLab Create::Remote Development team](https://handbook.gitlab.com/handbook/engineering/development/dev/create/remote-development/). I've been at GitLab since November 2019.
+- [ENTJ-A personality type](https://www.16personalities.com/entj-personality)
 
-Currently, I'm a Staff Fullstack Engineer on the [GitLab Create::Remote Development team](https://handbook.gitlab.com/handbook/engineering/development/dev/create/remote-development/), since November 2019.
+## GitLab Contributor Platform activity reports
 
-Other stuff:
-- Here's my [2024 GitLab Wrapped](https://cwoolley-gitlab.gitlab.io/gitlab-wrapped) activity report.
+- [2024](https://contributors.gitlab.com/leaderboard?fromDate=2024-01-01&toDate=2024-12-31&search=cwoolley-gitlab&communityOnly=false)
+- [2025](https://contributors.gitlab.com/leaderboard?fromDate=2025-01-01&toDate=2025-12-31&search=cwoolley-gitlab&communityOnly=false)
+
+## GitLab Wrapped activity
+
+- [2024](https://cwoolley-gitlab.gitlab.io/gitlab-wrapped)
+
+## Other stuff
+
 - Here's my [interactive resume/CV](https://resume.thewoolleyweb.com/), which is a [SPA](https://en.wikipedia.org/wiki/Single-page_application) I created in Vue.js to helped me get my job at GitLab (and hasn't been updated since then). 
 - My personal ID is `thewoolleyman` everywhere - feel free to connect, but all opinions expressed elsewhere are mine only (and usually unfiltered), and do not represent GitLab.
