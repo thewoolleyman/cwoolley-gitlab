@@ -11,7 +11,7 @@
 ## Useful Links
 
 * Notes/Instructions on how I set up my macOS development machine: [GitLab Workstation Setup Notes](https://gitlab.com/cwoolley-gitlab/cwoolley-gitlab/-/blob/main/gitlab-workstation-setup-notes.md)
-* Developer Cheatsheet which has evolved from some of my onboarding notes: [GitLab Developer Cheatsheet](https://handbook.gitlab.com/handbook/)
+* Developer Cheatsheet which has evolved from some of my onboarding notes: [GitLab Developer Cheatsheet](https://handbook.gitlab.com/handbook/engineering/development/dev/create/remote-development/developer-cheatsheet/)
 * How I manage my JetBrains RubyMine config in source control: [https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab](https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab)
 
 ## About Me
