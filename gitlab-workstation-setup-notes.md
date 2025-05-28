@@ -251,6 +251,14 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
 * GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
 * TODO: network monitor
 
+## Environment setup
+
+### mise
+
+- Symlink the `gitlab` repo `.tool-versions` file to the home directory, so it applies globally. This helps ensure that even outside
+  the gitlab repo, you are always using tool versions which are installed and up-to-date by the latest GDK update.
+  - For example: `ln -s ~/workspace/gitlab-development-kit/gitlab/.tool-versions .tool-versions`
+
 ## JetBrains IDE Setup
 
 ### UPDATE - See the JetBrains section in the GitLab handbook!
