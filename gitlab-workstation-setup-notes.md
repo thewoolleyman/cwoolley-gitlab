@@ -106,11 +106,11 @@ This helps me, hopefully it helps you!
 * Once it reboots, all of your Chrome settings will automatically sync from your previous machine.
 * If it doesn't do it automatically, install the 1Password chrome extension and log in to it.
 * Open App Store and install all updates
-* Perform all [macOS Settings](#macos-settings)
 
 ----
 TODO: Update notes below here...
 
+* Perform all [macOS Settings](#macos-settings)
 * Install Rosetta. You will be prompted to install it when you start the first app which requires
   it (for me it was JetBrains Toolbox)
 
