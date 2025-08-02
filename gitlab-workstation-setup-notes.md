@@ -244,11 +244,11 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
   * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
     "My Drive". There seems to be a bug in Google Drive that causes it to ignore if you toggle
     the "Finder -> (right click) -> Offline Access -> Online Only", and not recurse to subfolders,
-    and then it will download files in subfolders and quickly fill up terabytes of local disk space.   
+    and then it will download files in subfolders and quickly fill up terabytes of local disk space.
+    * TODO: See if this still happens after new install on 2025 MacBook
   * See instructions: https://about.gitlab.
     com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
     page to new app name "Drive for Desktop")
-  * Use Version: 54.0.2.0 (Apple Silicon) or later
   * Use "Stream Files" for GitLab account
     * In Finder left pane for drive account, right click "My Drive" -> Offline Access -> 
       Available offline
