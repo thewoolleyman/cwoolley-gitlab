@@ -40,7 +40,7 @@
 # Overview
 
 This document is notes/instructions for the steps which I ([Chad Woolley](README.md))
-took to set up my GitLab developer workstation environment on a 2021 MacBook Pro M1 Max.
+took to set up my GitLab developer workstation environment on a 2025 MacBook Pro.
 
 This as my only workstation (it is not practical to maintain a second personal workstation,
 especially when traveling as a minimalist digital nomad), so I also set up things I require for
@@ -102,9 +102,15 @@ This helps me, hopefully it helps you!
 
 * Unbox machine and run through initial macOS setup, i.e. pick username, location, touch ID, etc.
   * NOTE: You should use the same username as the old machine to make things easier.
-* Log into GitLab-specific Apple ID
+* GitLab will prompt you to register the machine. This will automatically install some apps, currently "Security Software". Chrome, Zoom, 1Password, and Slack. Then it will automatically reboot
+* Once it reboots, all of your Chrome settings will automatically sync from your previous machine.
+* If it doesn't do it automatically, install the 1Password chrome extension and log in to it.
 * Open App Store and install all updates
 * Perform all [macOS Settings](#macos-settings)
+
+----
+TODO: Update notes below here...
+
 * Install Rosetta. You will be prompted to install it when you start the first app which requires
   it (for me it was JetBrains Toolbox)
 
