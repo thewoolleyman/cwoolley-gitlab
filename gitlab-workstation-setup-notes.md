@@ -241,17 +241,17 @@ Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes,
   * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
 * Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/
 * Set up Google Drive syncing
-  * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
-    "My Drive". There seems to be a bug in Google Drive that causes it to ignore if you toggle
-    the "Finder -> (right click) -> Offline Access -> Online Only", and not recurse to subfolders,
-    and then it will download files in subfolders and quickly fill up terabytes of local disk space.
-    * TODO: See if this still happens after new install on 2025 MacBook
   * See instructions: https://about.gitlab.
     com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
     page to new app name "Drive for Desktop")
   * Use "Stream Files" for GitLab account
     * In Finder left pane for drive account, right click "My Drive" -> Offline Access -> 
       Available offline
+    * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
+      "My Drive". This causes Google Drive mirrored offline folders to recurse to subfolders,
+      and then it will download files in subfolders and quickly fill up terabytes of local disk space.
+      * The workaround for this is to create your own dedicated "shared drive", that is NOT
+        under your "My Drive", and move the large shared folders under there for easy access.
   * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
     a custom location like "~/Google Drive Personal Account"
 * GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
