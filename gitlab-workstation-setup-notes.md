@@ -205,6 +205,12 @@ TODO: Update notes below here...
     * Copy file from 1password secure note
     * Unzip to home dir: `tar -xvf ssh_dir.tgz`
 
+
+
+
+TODO: Decide what files to copy from home directory...
+
+
 ## Required GitLab Tools
 
 * 1Password
