@@ -23,7 +23,7 @@
       * [RubyMine Manual Setup](#rubymine-manual-setup)
   * [Additional Settings](#additional-settings)
     * [macOS Settings](#macos-settings)
-      * [macOS System Preferences Settings](#macos-system-preferences-settings)
+      * [macOS System Settings Settings](#macos-system-preferences-settings)
       * [macOS Other Settings](#macos-other-settings)
   * [Additional Tools](#additional-tools)
   * [Virtual Machine Setup](#virtual-machine-setup)
@@ -106,13 +106,82 @@ This helps me, hopefully it helps you!
 * Once it reboots, all of your Chrome settings will automatically sync from your previous machine.
 * If it doesn't do it automatically, install the 1Password chrome extension and log in to it.
 * Open App Store and install all updates
-
-----
-TODO: Update notes below here...
-
 * Perform all [macOS Settings](#macos-settings)
 * Install Rosetta. You will be prompted to install it when you start the first app which requires
   it (for me it was JetBrains Toolbox)
+
+## macOS Settings
+
+### macOS System Settings Settings
+
+* System Settings - General
+  * Language and Region:
+    * Firat Day of the Week: Monday (used by other apps such as Timing and Calendar)
+* System Settings - Notifications
+  * NOTE: I disable all notifications. This is to prevent distracting popups during screen sharing or
+    screen recordings, with the following exceptions:
+    * My current native calendar app (currently Apple Calendar)
+    * Time-tracking app and plugin (currently Timing)
+  * System Settings -> Notifications
+    * Uncheck "Allow Notifications" for all apps except exceptions listed above.
+  * ONGOING: Whenever any app pops up a request to show macOS notifications, always choose "Don't Allow"
+* System Settings - Keyboard
+  * Max key repeat, shorter delay until repeat.
+  * Keyboard Shortcuts:
+    * **!!IMPORTANT! Services -> Text: Uncheck "Search man Page Index in Terminal" ([steals binding from Jetbrains](https://stackoverflow.com/a/55747595)).**
+    * Function Keys: Use function keys as standard function keys
+  * Change "Press 'globe' key" from default "Show emoji and symbols" to "Do Nothing". Prevents it from popping up when accidentally hitting it instead of
+    control on Apple keyboard. Use `Ctrl-Cmd-Space` instead to bring up emoji and symbols "Character Viewer" window.
+* System Settings - Trackpad
+  * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
+  * More Gestures: Uncheck "Swipe between pages"
+* System Settings - Battery
+  * Options
+    * Turn off "slightly dim the display when on battery power"
+  * Power Adapter
+    * High Power
+* System Settings - Display - Display Settings...
+  * Turn off "Automatically Adjust Brightness"
+  * Turn off "True Tone"
+
+### macOS Other Settings
+
+* iCloud
+  * Set up iCloud for gitlab ID
+    * Set up Find My Mac
+    * Uncheck Mail and Calendar
+    * Check Keychain and Find My Mac
+
+* Finder
+  * Settings
+    * General
+      * Show hard disks and connected servers
+      * New Finder windows show home directory
+    * Sidebar: Show everything except Music and Movies
+    * Advanced
+      * Show all filename extensions
+      * Keep folders on top always (check both boxes)
+  * Drag `~/workspace` to sidebar
+
+* Make everything show in Finder:
+  * Finder -> home directory
+    * Change to List view
+    * In Menu-> View -> Show View Options
+      * Show Library Folder
+      * Use as Defaults (so everything shows in list view)
+  * Show hidden files in Finder: `defaults write com.apple.finder AppleShowAllFiles True; killall Finder`
+    * **_`Cmd-Shift-.` (period) to toggle hidden files in finder windows_**
+
+* set nopasswd sudoers - `sudo visudo`, change "`%admin ...`" line to read: `%admin   ALL=(ALL) NOPASSWD:ALL`
+
+* Show purchases from personal Apple account in App Store (not positive if this is right, it only has to be done once, not on new machines)
+  * Set up family sharing for personal apple account and add gitlab account to personal account
+  * In App store, log into personal account.
+  * In App store, log out of personal account, then log into GitLab account. It should still
+    "remember" that you logged into the personal account, and show apps for both IDs under "Purchased By"
+
+----
+TODO: Update notes below here...
 
 ## Migration from previous machine
 
@@ -396,76 +465,7 @@ any settings which were missed by the SCM-based setup described above.
 
 ## Additional Settings
 
-### macOS Settings
-
-#### macOS System Preferences Settings
-
-* System Preferences - Notifications
-  * NOTE: I disable all notifications. This is to prevent distracting popups during screen sharing or
-    screen recordings, with the following exceptions:
-    * My current calendar app (currently Cron)
-    * My current calendar notifications app (currently MeetingBar)
-    * Time-tracking app and plugin (currently Timing and Timing Tracker)
-  * System Preferences -> Notifications and Focus
-    * Uncheck "Allow Notifications" for all apps except exceptions listed above.
-  * ONGOING: Whenever any app pops up a request to show macOS notifications, always choose "Don't Allow"
-* System Preferences - Keyboard
-  * Max key repeat, shorter delay until repeat.
-  * Normal Keyboard: Use function keys as standard function keys
-  * Shortcuts -> Services -> Text: Uncheck "Search man Page Index in Terminal" ([steals binding from Jetbrains](https://stackoverflow.com/a/55747595)).
-* System Preferences - Language & Region - Advanced
-  * First day of week: Monday (used by other apps such as Timing)
-* System Preferences - Trackpad
-  * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
-  * More Gestures: Uncheck "Swipe between pages"
-* System Preferences - Battery
-  * Battery
-    * Turn display off after 10 minutes
-    * Turn off "slightly dim the display when on battery power"
-  * Power Adapter
-    * Turn display off after 1 hour
-* System Preferences - Display - Display Settings...
-  * Turn off "Automatically Adjust Brightness"
-  * Turn off "True Tone"
-* SYstem Preferences - Keyboard
-  * Change "Press 'globe' key" from default "Show emoji and symbols" to "Do Nothing". Prevents it from popping up when accidentally hitting it instead of control on Apple keyboard. Use `Ctrl-Cmd-Space` instead to bring up emoji and symbols "Character Viewer" window.
-
-#### macOS Other Settings
-
-* iCloud
-  * Set up iCloud for gitlab ID
-    * Set up Find My Mac
-    * Uncheck Mail and Calendar
-    * Check Keychain and Find My Mac
-
-* Finder
-  * Preferences
-    * General
-      * Show hard disks and connected servers
-      * New Finder windows show home directory
-    * Sidebar: Show everything
-    * Advanced
-      * Show all filename extensions
-      * Keep folders on top always (check both boxes)
-  * Drag `~/workspace` to sidebar
-
-* Make everything show in Finder:
-  * Finder -> home directory
-    * Change to List view
-    * In Menu-> View -> Show View Options
-      * Show Library Folder
-      * Use as Defaults (so everything shows in list view)
-  * Show hidden files in Finder: `defaults write com.apple.finder AppleShowAllFiles True; killall Finder` (Cmd-Shift-. (period) to toggle)
-
-* set nopasswd sudoers - `sudo visudo`, change "`%admin ...`" line to read: `%admin   ALL=(ALL) NOPASSWD:ALL`
-
-* Show purchases from personal Apple account in App Store (not positive if this is right!)
-  * Set up family sharing for personal apple account and add gitlab account to personal account
-  * In App store, log into personal account.
-  * In App store, log out of personal account, then log into GitLab account. It should still
-    "remember" that you logged into the personal account, and show apps for both IDs under "Purchased By"
-
-* Add `gst` alias to `~/.zshrc`: `alias gst='git status'`
+* Add `gst` alias in `~/.zshrc`: `alias gst='git status'`
 
 * Add following to `~/.gitconfig`
   ```
