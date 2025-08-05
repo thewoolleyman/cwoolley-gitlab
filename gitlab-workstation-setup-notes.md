@@ -242,7 +242,7 @@ You can just do this via a Slack or email message to yourself, e.g.
 - So, I use a local separate linux box as a "jump box" to tunnel the SSH traffic between the machines.
   I could use a cloud machine, but then all traffic is going out of my local network which is much slower. You do have an extra linux box
   laying around, right? If not, you should ;). IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data
-  to a machine which is not owned by GitLab.
+  to a machine which is not owned by GitLab. If you have doubts, use a machine-to-machine solution like AirDrop.
 - All commands are on new machine, unless otherwise specified for `Old machine`  
 
 ### Old machine: put public key in authorized_keys
