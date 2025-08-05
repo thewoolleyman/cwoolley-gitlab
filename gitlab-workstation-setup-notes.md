@@ -180,6 +180,26 @@ This helps me, hopefully it helps you!
   * In App store, log out of personal account, then log into GitLab account. It should still
     "remember" that you logged into the personal account, and show apps for both IDs under "Purchased By"
 
+## Set up Developer Tools
+
+These will be required by iTerm2, so go ahead and install them
+
+* Install Command Line Developer Tools: `xcode-select --install`
+
+## Set up iTerm2
+
+iTerm2 is my preferred terminal, so I set it up before moving on to the next steps which require CLI commands.
+
+* iTerm2
+  * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
+  * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
+  * Appearance -> Dimming -> Dim background windows
+  * Profiles -> Default (starred) Profile
+    * General -> Initial Directory: Select "Reuse previous session's directory"
+    * Text -> Font size 14
+    * Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
+    * Keys -> Left Option acts as `Esc+`
+
 ----
 TODO: Update notes below here...
 
@@ -232,7 +252,8 @@ TODO: Decide what files to copy from home directory...
 ## GitLab Developer Environment
 
 * Install Xcode from app store
-* Install Command Line Tools: `xcode-select --install`
+  * This may be optional? I never use it. I'm going to see if I can just get along with developer tools on this install,
+    because I don't like how it hijacks most source code extensions to open XCode by default.
 
 ### GDK Setup
 
@@ -542,14 +563,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Bartender 4 - Manage MacOS Menu Items on MacBooks with camera notch
   * Menu Bar Item Spacing - Small
   * Only show necessary/desired menu items
-
-* iTerm2
-  * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
-  * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
-  * Appearance -> Dimming -> Dim background windows
-  * Profiles -> Default (starred) Profile -> Keys -> Left Option acts as `Esc+`
-  * Profiles -> Default -> General -> Working Directory: Select "Reuse previous session's directory"
-  * Profiles -> Default -> Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
 
 * [Rectangle](https://rectangleapp.com) (window organizer)
   * Give accessibility permissions
