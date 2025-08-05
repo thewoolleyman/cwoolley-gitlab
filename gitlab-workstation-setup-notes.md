@@ -100,6 +100,7 @@ This helps me, hopefully it helps you!
 
 ## Basic macOS Setup
 
+* **IMPORTANT** Pick same username for new machine as old machine. This makes copying files easier later.
 * Unbox machine and run through initial macOS setup, i.e. pick username, location, touch ID, etc.
   * NOTE: You should use the same username as the old machine to make things easier.
 * GitLab will prompt you to register the machine. This will automatically install some apps, currently "Security Software". Chrome, Zoom, 1Password, and Slack. Then it will automatically reboot
@@ -203,20 +204,18 @@ iTerm2 is my preferred terminal, so I set it up before moving on to the next ste
     * Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
     * Keys -> Left Option acts as `Esc+`
 
-----
-TODO: Update notes below here...
-
 ## Migration from previous machine
 
-* Manually copy over files from old workstation, using `rsync`. We use rsync because it can restart after
-  failures and skip over files which have already been copied.
-  * (on old workstation): Go to System Settings -> General -> Sharing -> Remote Login, click the `(i)`, and get username/(IP)
-  
-  * Example rsync command: `rsync 
-* Using `rsync` copy over files from old workstation.
-  * `~/workspace` (where all my projects are)
-  * `~/Desktop` contents as necessary
-  * `~/Documents` contents as necessary
+### Copy over /etc/hosts
+
+You can just do this via a Slack or email message to yourself, e.g.
+
+- Old machine: `cat /etc/hosts` > pbcopy
+- Paste to yourself
+- New machine: `sudo vi /etc/hosts`, paste in contents
+
+### Copy over `.ssh` directory
+
 * Copy over `~/.ssh` directory.
   * Notes on SSH keys
     * I keep my primary ssh key in `~/.ssh/id_cwoolley-gitlab`, and symlink it to `id_rsa`
@@ -227,16 +226,73 @@ TODO: Update notes below here...
     I do keep copies of all individual private keys in 1password, but this is easier to copy everything
     over at once.
   * Old machine
-    * Zip existing dir: `tar -czf ssh_dir.tgz .ssh`
+    * Zip existing ssh dir from home dir: `tar -czf yyyy-mm-dd-ssh-dir.tgz .ssh`
     * Attach file 1password secure note (change dropdown to `file` type)
   * New machine
     * Copy file from 1password secure note
-    * Unzip to home dir: `tar -xvf ssh_dir.tgz`
+    * Unzip to home dir: `tar -xvf yyyy-mm-dd-ssh-dir.tgz`
+
+## Use rsync to copy over files
+
+### Overview
+
+- I prefer to copy my files via `rsync` from old workstation, using `rsync`, because it can restart after
+  failures and skip over files which have already been copied.
+- However, gitlab security rules block external network connections, which prevents normal incoming ssh connections (and rsync, which uses ssh)  
+- So, I use a local separate linux box as a "jump box" to tunnel the SSH traffic between the machines.
+  I could use a cloud machine, but then all traffic is going out of my local network which is much slower. You do have an extra linux box
+  laying around, right? If not, you should ;)
+- All commands are on new machine, unless otherwise specified for `Old machine`  
+
+### Old machine: put public key in authorized_keys
+
+Ensure you have copied your ssh public key (the same one you copied with your .ssh dir earlier) to `~/.ssh/authorized_keys`:
+
+- `cp id_rsa.pub authorized_keys`
+- `chmod 600 authorized_keys`
+
+### Old machine: reverse tunnel to jump box
+
+- `ssh -R 2222:localhost:22 my-local-linux-machine`
+- Leave this terminal running, it's the tunnel connection
+
+## Old machine: enable ssh
+
+- Go to System Settings -> General -> Sharing -> Remote Login. Ensure it's enabled, and click the `(i)` to verify username is same as new
+
+### Add the jump box to the SSH config
+
+- Edit `~/.ssh/config`
+- Add this (`yourusername` should be the same on both old and new machines):
+
+```
+Host old-machine
+  HostName localhost
+  Port 2222
+  User yourusername
+  ProxyJump my-local-linux-machine
+```
+
+### Copy files with rsync
+  
+* Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`
+* Using `rsync` copy over files from old workstation.
+  * `~/workspace` (where all my projects are)
+  * `~/Desktop` contents as necessary
+  * `~/Documents` contents as necessary
+
+
+---
+TODO: Update notes below here...
+---
 
 
 
-
+---
 TODO: Decide what files to copy from home directory...
+---
+
+
 
 
 ## Required GitLab Tools
