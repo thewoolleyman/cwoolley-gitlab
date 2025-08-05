@@ -241,7 +241,7 @@ You can just do this via a Slack or email message to yourself, e.g.
 - However, gitlab security rules block external network connections, which prevents normal incoming ssh connections (and rsync, which uses ssh)  
 - So, I use a local separate linux box as a "jump box" to tunnel the SSH traffic between the machines.
   I could use a cloud machine, but then all traffic is going out of my local network which is much slower. You do have an extra linux box
-  laying around, right? If not, you should ;)
+  laying around, right? If not, you should ;).
 - All commands are on new machine, unless otherwise specified for `Old machine`  
 
 ### Old machine: put public key in authorized_keys
@@ -276,11 +276,8 @@ Host old-machine
 ### Copy files with rsync
   
 * Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`
-* Using `rsync` copy over files from old workstation.
-  * `~/workspace` (where all my projects are)
-  * `~/Desktop` contents as necessary
-  * `~/Documents` contents as necessary
-
+* Using `rsync` copy over necessary files from old workstation. IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data
+  to a machine which is not owned by GitLab.
 
 ---
 TODO: Update notes below here...
