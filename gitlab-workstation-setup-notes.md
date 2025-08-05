@@ -274,16 +274,21 @@ Host old-machine
   ProxyJump my-local-linux-machine
 ```
 
-### Copy files with rsync
-  
+### Copy files
+
+IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data to a machine which is not owned by GitLab, e.g. via the jump box
+approach shown above. If you have any doubts, use a machine-to-machine solution such as AirDrop.
+
+Directories to consider copying:
+
+- `~/workspace` (where all my projects are cloned)
+- `~/Documents`
+- `~/Desktop`
+
+#### Using rsync
+
 * Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`
 * Using `rsync` copy over necessary files from old workstation.
-
----
-TODO: Update notes below here...
----
-
-
 
 ---
 TODO: Decide what files to copy from home directory...
