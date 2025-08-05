@@ -112,35 +112,38 @@ This helps me, hopefully it helps you!
 
 ## macOS Settings
 
-### macOS System Settings Settings
+### macOS System Settings
 
-* System Settings - General
+Click `Apple` menu on taskbar and `System Settings`
+
+* General
   * Language and Region:
     * Firat Day of the Week: Monday (used by other apps such as Timing and Calendar)
-* System Settings - Notifications
+  * Sharing
+    * Remote Login -> Turn on. This is required for SSH access - used later to copy files from old workstation via `rsync`.  
+* Notifications
   * NOTE: I disable all notifications. This is to prevent distracting popups during screen sharing or
     screen recordings, with the following exceptions:
     * My current native calendar app (currently Apple Calendar)
     * Time-tracking app and plugin (currently Timing)
-  * System Settings -> Notifications
-    * Uncheck "Allow Notifications" for all apps except exceptions listed above.
+  * Uncheck "Allow Notifications" for all apps except exceptions listed above.
   * ONGOING: Whenever any app pops up a request to show macOS notifications, always choose "Don't Allow"
-* System Settings - Keyboard
+* Keyboard
   * Max key repeat, shorter delay until repeat.
   * Keyboard Shortcuts:
     * **!!IMPORTANT! Services -> Text: Uncheck "Search man Page Index in Terminal" ([steals binding from Jetbrains](https://stackoverflow.com/a/55747595)).**
     * Function Keys: Use function keys as standard function keys
   * Change "Press 'globe' key" from default "Show emoji and symbols" to "Do Nothing". Prevents it from popping up when accidentally hitting it instead of
     control on Apple keyboard. Use `Ctrl-Cmd-Space` instead to bring up emoji and symbols "Character Viewer" window.
-* System Settings - Trackpad
+* Trackpad
   * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
   * More Gestures: Uncheck "Swipe between pages"
-* System Settings - Battery
+* Battery
   * Options
     * Turn off "slightly dim the display when on battery power"
   * Power Adapter
     * High Power
-* System Settings - Display - Display Settings...
+* Display - Display Settings...
   * Turn off "Automatically Adjust Brightness"
   * Turn off "True Tone"
 
@@ -205,7 +208,12 @@ TODO: Update notes below here...
 
 ## Migration from previous machine
 
-* Manually (via Finder) copy over files from Time Machine backup of old workstation:
+* Manually copy over files from old workstation, using `rsync`. We use rsync because it can restart after
+  failures and skip over files which have already been copied.
+  * (on old workstation): Go to System Settings -> General -> Sharing -> Remote Login, click the `(i)`, and get username/(IP)
+  
+  * Example rsync command: `rsync 
+* Using `rsync` copy over files from old workstation.
   * `~/workspace` (where all my projects are)
   * `~/Desktop` contents as necessary
   * `~/Documents` contents as necessary
