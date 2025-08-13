@@ -279,103 +279,92 @@ Host old-machine
 IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data to a machine which is not owned by GitLab, e.g. via the jump box
 approach shown above. If you have any doubts, use a machine-to-machine solution such as AirDrop.
 
-Directories to consider copying:
-
-- `~/workspace` (where all my projects are cloned)
-- `~/Documents`
-- `~/Desktop`
-
 #### Using rsync
 
-* Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`
-* Using `rsync` copy over necessary files from old workstation.
+* Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`. Add more `v`s for more verbosity.
+* Using an `rsync` command similar to the above, copy over necessary files from old workstation.
 
----
-TODO: Decide what files to copy from home directory...
----
+#### Using Airdrop
 
-
-
+* Open the Airdrop app on new machine
+* Set the discovery preferences to allow the old machine to see the new machine
+* Open Airdrop app on old machine
+* Drag files/directories from old machine Finder onto the Airdrop icon for the new machine
+* The files will appear under `Downloads` on new machine.
 
 ## Required GitLab Tools
 
 * 1Password
   * Install and log in to GitLab account. You can use the camera to take a picture of the barcode on
     your old computer
-  * Log into my personal 1Password vault
-  * Preferences -> Accounts: remove all keyboard shortcuts (so they don't conflict with JetBrains)
+  * Log into personal 1Password vault in addition to GitLab
+  * Settings -> General: remove all keyboard shortcuts (so they don't conflict with JetBrains)
   * Update other settings/vaults as desired
 * 1Password for Safari
-  * After installing 1password for mac, go to Safari Prefs -> Extensions
-    * Check "1Password"
+  * Go to App Store, install for `1Password for Safari`
 * Slack for Desktop
   * Sign into GitLab workspace (via Okta)
-  * Sign in to any additional workspaces you may have under your personal email (sign in to slack.com and choose from list)
-* Zoom Preferences:
-  * General: Use Dual Monitors -> checked
-  * General: Enter full screen when starting or joining a meeting -> unchecked
-
+  * Sign in to any additional workspaces you may have under your personal email (from Brave, sign in to slack.com and choose from list)
+* Zoom Settings:
+  * Meetings and Webinars:
+    * Join experience:
+      * Keep my microphone muted: checked
+      * Enter full screen automatically: unchecked
+    * In-meeting and in-webinar experience -> Use Dual Monitors:  checked
+  
 ## GitLab Developer Environment
 
-* Install Xcode from app store
-  * This may be optional? I never use it. I'm going to see if I can just get along with developer tools on this install,
-    because I don't like how it hijacks most source code extensions to open XCode by default.
+### Install Xcode developer tools
+
+* Run `xcode-select --install` (this is a prerequisite for GDK, but listed here seprately).
+* (OPTIONAL) Install Xcode IDE from app store
+  * The full ZXcode IDE may be optional? I never use it. I'm going to see if I can just get along with developer tools on
+    this install, because I don't like how it hijacks most source code extensions to open XCode by default.
+
+### Install Homebrew
+
+* Go to https://brew.sh/ and copy and run the one-liner install command (this is a prerequisite for GDK, but listed here seprately).
+* Follow the instructions printed out to add it to your path. For example (but use the printed version):
+
+```
+echo >> /Users/cwoolley/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/cwoolley/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
 
 ### GDK Setup
 
 * Make sure your SSH key is installed (see instructions above)
-* See GDK notes on Silicon setup: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159
+* Make sure you have Xcode developer tools installed (see instructions above)
+* Make sure you have Homebrew installed (see instructions above)
 
-#### GDK Setup with Apple Silicon
+#### If you do not yet have GDK install
 
-**NOTE: Now that https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159 is closed,
-this should be the default setup**
+* **IF YOU DO NOT YET HAVE A GDK SETUP, do a full installation, via one-line or simple installation methods:
+   * Run GDK one-line installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/_index.md#one-line-installation
+   * Simple installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/_index.md#simple-installation
 
-* TODO: Set this up. QUESTION: Will I need to have a completely separate GDK install directory,
-to avoid conflicts with different compilations for Apple Silicon vs. Rosetta? Asked
-here: https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_812063146
+#### If you alredy have a GDK install
 
-#### GDK Setup with Rosetta
+* **IF YOU ALREADY HAVE A GDK CLONE COPIED FROM OLD MACHINE, USE THESE INSTRUCTIONS...**
 
-**NOTE: Now that https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159 is closed,
-there should be no need to do this Rosetta setup. I've left it here for future reference.**
+* Change to GDK directory
+* `rm <PATH TO GDK>/.cache/.gdk_bootstrapped`
+* `rm <PATH TO GDK>/.cache/.gdk_platform_setup`
+* `git pull` to get latest commit
+* `make bootstrap`
 
-* Set up Terminal app for Rosetta
-  * (from https://gitlab.com/gitlab-com/business-technology/engineering/operations/issue-tracker/-/issues/36#note_739795580)
-  * Right-click Terminal app icon within Finder, select Get info, under General section, check Open using Rosetta option
-  * Open Terminal normally, and then run `arch -x86_64 /bin/zsh` and it should drop you to prompt where Rosetta is default mode
-  * Verify by running arch command and it should show `i386`
-* Run GDK one-line installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md#one-line-installation
-  * Had some errors, see following for fixes:
-    * postgres failed to install, got error `.asdf/plugins/postgres/bin/install: line 45: uconv: command not found`. Had to add:
-      * `PATH="/usr/local/opt/icu4c/bin:$PATH"` 
-    * https://gitlab.com/gitlab-org/gitlab-development-kit/-/issues/1159#note_796332993 
 
-#### Homebrew installation and architecture notes
 
-**UPDATE: I have now switched my homebrew to be setup from scratch under `arm64` architecture (i.e. under `/opt/homebrew`), so the
-rest of this section is mostly outdated. I'll update/delete it later**
+----
+----
+----
+TODO: Finish updating instructions for new machine below here...
+----
+----
+----
 
-**NOTE: I originally installed my entire GDK under `x86_64` architecture, so if you install it under `arm64` architecture,
-you may have different results.**
 
-Homebrew will be automatically installed as part of the GDK setup.
-
-On the M1 Macs, there's two options for Homebrew setup - you can have a single Homebrew installation for both
-`arch` architectures (`arm64` and `x86_64`, as described above), or you can have separate dedicated homebrew installs
-for each architecture.
-
-Currently, I am using a single install. Occasionally a tool installed via `brew` will fail to compile under the `arm64`
-architecture (for example, this happened with `wget` I believe).
-
-In this case, you can open a new terminal, run `arch -x86_64 /bin/zsh`, and then re-attempt the `brew install ...` command.
-
-In my experience, this results in a compiled executable which will work fine even when called from a terminal/process using
-`arm64` architecture.
-
-Again, YMMV, please open an issue if you find anything notable or different I should mention here.
-
-Someday I'll do a full reinstall of the GDK under `arm64` and see how that goes, but not today.
 
 ### GDK Configuration
 
@@ -632,12 +621,14 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 
 * [Rectangle](https://rectangleapp.com) (window organizer)
   * Give accessibility permissions
+  * Choose "Rectangle" defaults (not Spectacle)
+  * If you get "Conflict with macOS tiling", choose "Disable in Rectangle"
   * Remove all default keybindings, add back only (to prevent conflicts with Jetbrains defaults):
-    * ctrl-option-cmd ("smash") arrows for top/bottom/right/left
+    * ctrl-option-cmd ("smash") arrows for top/bottom/right/left halves
     * smash-m for Maximize
     * smash-n for next display
     * smash-shift-left/up/down/right for top left/top right/bottom left/bottom right
-  * In config settings (gear icon): Change "Repeated commands" to "Cycle 1/2, 2/3, and 1/3 on half actions"
+  * In config settings (gear icon): Change "Repeated commands" to "Cycle sizes on half actions", and pick  1/2 (default), 2/3, and 1/3.
   * Hide menu bar icon, check for updates automatically (Use Spotlight to show config when needed)
 
 * [Clipy](https://clipy-app.com/)
