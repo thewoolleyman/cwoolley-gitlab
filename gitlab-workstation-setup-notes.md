@@ -204,6 +204,21 @@ iTerm2 is my preferred terminal, so I set it up before moving on to the next ste
     * Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
     * Keys -> Left Option acts as `Esc+`
 
+## Google Drive setup
+
+* Set up Google Drive syncing
+  * See instructions: https://about.gitlab.com/handbook/tools-and-tips/#adding-google-drive-to-your-mac
+  * Use "Stream Files" for GitLab account
+    * In Finder left pane for drive account, right click "My Drive" -> Offline Access -> 
+      Available offline
+    * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
+      "My Drive". This causes Google Drive mirrored offline folders to recurse to subfolders,
+      and then it will download files in subfolders and quickly fill up terabytes of local disk space.
+      * The workaround for this is to create your own dedicated "shared drive", that is NOT
+        under your "My Drive", and move the large shared folders under there for easy access.
+  * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
+    a custom location like "~/Google Drive Personal Account"
+
 ## Migration from previous machine
 
 ### Copy over /etc/hosts
@@ -391,7 +406,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   the gitlab repo, you are always using tool versions which are installed and up-to-date by the latest GDK update.
   - For example: `ln -s ~/workspace/gitlab-development-kit/gitlab/.tool-versions .tool-versions`
 
-## Optional/Recommended GitLab Tools/Setup
+## Other CLI setup
 
 * Git command prompt
   * I use the `~/.git-prompt.sh` script as described in
@@ -409,8 +424,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
     # shows branch name
     precmd () { __git_ps1 "%1~" "$ " " (%s)" }
     ```
+* GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
+  * `brew install glab`
 
+## Other GitLab tools setup
 
+* Set up browser to search like a pro with Chrome keyword shortcuts: https://about.gitlab.com/handbook/tools-and-tips/searching/
+  * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
+* ~~Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/~~ (I don't really use this anymore, but it can be useful)
 
 ----
 ----
@@ -422,25 +443,6 @@ TODO: Finish updating instructions for new machine below here...
 
 
 
-* Set up browser to search like a pro with Chrome keyword shortcuts: https://about.gitlab.com/handbook/tools-and-tips/searching/
-  * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
-* Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/
-* Set up Google Drive syncing
-  * See instructions: https://about.gitlab.
-    com/handbook/tools-and-tips/#adding-google-drive-to-your-mac (TODO: update this handbook 
-    page to new app name "Drive for Desktop")
-  * Use "Stream Files" for GitLab account
-    * In Finder left pane for drive account, right click "My Drive" -> Offline Access -> 
-      Available offline
-    * IMPORTANT NOTE: Do NOT have any shortcuts to large "shared folders" in your Google Drive
-      "My Drive". This causes Google Drive mirrored offline folders to recurse to subfolders,
-      and then it will download files in subfolders and quickly fill up terabytes of local disk space.
-      * The workaround for this is to create your own dedicated "shared drive", that is NOT
-        under your "My Drive", and move the large shared folders under there for easy access.
-  * Set up additional personal account, if desired, using "Mirror Files" if desired. Make it to 
-    a custom location like "~/Google Drive Personal Account"
-* GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
-* TODO: network monitor
 
 ## JetBrains IDE Setup
 
