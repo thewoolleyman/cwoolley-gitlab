@@ -426,6 +426,43 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
     ```
 * GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
   * `brew install glab`
+* Add `gst` alias in `~/.zshrc`: `alias gst='git status'`
+* Install git credential manager: `brew install --cask git-credential-manager`
+* Add following to `~/.gitconfig` (this is just my current config, you can choose what parts are relevant)
+
+```
+[user]
+  name = Chad Woolley
+  email = cwoolley@gitlab.com
+[alias]
+gst = status
+ci = commit
+co = checkout
+sw = switch
+up = !git pull --rebase $(git rev-parse --abbrev-ref --symbolic @{u} | sed 's:/: :')
+rbi = !git rebase -i $(git merge-base head master)
+[credential]
+helper = osxkeychain
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[core]
+untrackedCache = true
+[push]
+default = current
+[pull]
+rebase = true
+[feature]
+manyFiles = true
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "http://gdk.test:3000"]
+	provider = generic
+[maintenance]
+	repo = /Users/cwoolley/workspace/gitlab-development-kit
+	repo = /Users/cwoolley/workspace/gitlab-development-kit/gitlab
+```
+
 
 ## Other GitLab tools setup
 
@@ -443,163 +480,6 @@ TODO: Finish updating instructions for new machine below here...
 
 
 
-
-## JetBrains IDE Setup
-
-### UPDATE - See the JetBrains section in the GitLab handbook!
-
-Since the time that I wrote these setup docs, I have created a
-section in the GitLab handbook dedicated to Jetbrains IDEs, and their configuration and setup.
-There will be additional and updated info there. See:
-
-- [JetBrains IDEs](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/)
-- [Common JetBrains configuration and setup](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/setup-and-config/)
-
-### Overview
-
-There's a few sub-sections in this "Jetbrains IDE Setup" section. They go in a logical order that will result in the easiest
-and smoothest experience. I've tried to indicate which ones are **_REQUIRED_**, **_RECOMMENDED_**, or **_OPTIONAL_**
-
-### Common JetBrains IDE Setup
-
-#### JetBrains Toolbox Installation
-
-I consider the usage of JetBrains Toolbox **_REQUIRED_**. I **_DO NOT_** recommend trying to use Homebrew or manual installation
-to manage your JetBrains installations. Toolbox makes everything easier, there's no reason to not
-use it.
-
-* Install JetBrains Toolbox (used to manage all JetBrains IDE installations)
-  * Log into Jetbrains account which has licenses for IDEs you use (I pay for and use a personal
-    ultimate license which allows me to use any of the IDEs)
-* Install all IDEs which you use
-
-### RubyMine-Specific IDE Setup
-
-The following sub-sections are mainly designed for RubyMine, but much of it is also
-applicable to other JetBrains IDEs, especially when using them within the GitLab
-environment.
-
-Note: Ensure you install all plugins FIRST, before configuring setup, so any
-plugin-specific configuration entries will be present.
-
-#### Storing RubyMine Project and IDE Config in Git SCM
-
-**NOTE: THIS SECTION DESCRIBES A CUSTOM APPROACH I CAME UP WITH, IT IS _OPTIONAL_ AND _ADVANCED_.
-I _DO NOT RECOMMEND_ it for people new to JetBrains.**
-But if you are a dedicated JetBrains user, this approach may come in useful across upgrades, and especially when
-setting up a new workstation in the future**
-
-* I use the following approach to keep my RubyMine GitLab config in source control:
-  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
-* However, this may not restore all settings! Even if you use this approach,
-  you should still go through the manual setup below to ensure all settings are
-  restored.
-* This approachis also kind of flaky. The credentials on the repository sync
-  are currently particularly problematic; syncing only seems to work when you
-  exit the VM.  
-
-#### RubyMine Plugins
-
-All of these plugins are **__OPTIONAL_** but many are very useful and some could be considered
-a **_REQUIREMENT_**. I recommend you review each one and make a decision whether you think it
-will be useful for you.
-
-This list changes often for various reasons. Some of these I use often, some I don't. Sometimes,
-JetBrains will promote a third-party plugin to a default Jetbrains-provided plugin, or build
-it into the IDE. Sometimes plugins are renamed or break in latest versions. But I try to
-keep this mostly up to date with my currently curated list. 
-
-TODO: Find a way to easily export this list instead of manually curating it.
-
-* Note on Markdown plugin:
-  * The Markdown plugin used to be buggy and slow, but it has gotten better in recent releases.
-  * If you use it on main GitLab repos, you will probably want change the setting:
-    * Languages and Settings -> Markdown: Automatic assistance in the editor: Turn off
-    * Otherwise the plugin will prevent numbering of ordered lists with all `1.`
-      and forces them to be sequential.
-      See bug: https://youtrack.jetbrains.com/issue/IDEA-292704/Do-not-automatically-number-lists-in-markdown
-
-* Utility Plugins
-  * .env files support
-  * [Lines Sorter Plus](https://plugins.jetbrains.com/plugin/18564-lines-sorter-plus)
-  * Rainbow Brackets - different colored bracket and parenthesis matching (https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
-  * String Manipulation - it, uh, manipulates strings (https://plugins.jetbrains.com/plugin/2162-string-manipulation)
-  * Ideolog (log files)
-  * Files Watcher
-  * [CamelCase](https://plugins.jetbrains.com/plugin/7160-camelcase) - switch between cases with Option+Shift+U
-* Workflow Plugins
-  * [GitLink](https://plugins.jetbrains.com/plugin/8183-gitlink) - easily open repo web links directly from code
-  * [CodeStream (by NewRelic)](https://plugins.jetbrains.com/plugin/12206-new-relic-codestream-github-gitlab-prs-and-code-review) - MRs/PRs and Code
-    * In Preferences -> Tools -> Codestream: Turn off "Show line-level blame". It's annoying, I'll open the gutter if I want to see the blame, this isn't VS Code! ;)
-    * I ended up disabling this one, I never used it much. I either use the GitLab Web UI or the GitLab Merge Requests plugin. It also seems to crash frequently and clutter the context menus with useless stuff.
-  * [GitLab Merge Requests](https://plugins.jetbrains.com/plugin/18689-gitlab-merge-requests) - still in beta and seems buggy, but UI is promising. In-IDE diffs and inline commenting on diffs.
-* AI Coding Assistance Plugins
-  * [GitHub CoPilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)
-  * [Tabnine](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-code-completion-js-java-python-ts-rust-go-php--more)
-* Personal Productivity
-  * [CodeTime](https://plugins.jetbrains.com/plugin/15507-codetime) - static analysis and reports of coding patterns
-* Keystroke-Learning Plugins
-  * Force Shortcuts (if you are hardcore and want to be forced to use keyboard, I leave it disabled)
-  * Key Promoter X (if you want to be always reminded to use keyboard)
-  * Presentation Assistant (if you are pair programming, and want other people to see what keystrokes you are using)
-* Fun Plugins
-  * Nyan Progress Bar
-* Language/Coding Plugins
-  * GraphQL
-  * Prettier
-  * TOML
-  * Vue.js
-  * Makefile Language
-  * 
-
-#### GitLab-specific Rubymine Project Structure Settings
-
-Here is a screenshot of my current Project Structure settings. 
-
-The [exclusions are especially important, because these help reduce indexing time](https://www.jetbrains.com/help/ruby/indexing.html#exclude).
-
-![gitlab-rubymine-project-structure](https://gitlab.com/cwoolley-gitlab/cwoolley-gitlab/uploads/c2a75b6f5b5e88f67ad1acd3dbb6ee7c/gitlab-rubymine-project-structure.png)
-
-#### RubyMine Manual Setup
-
-**If you use RubyMine or other Jetbrains IDEs, I _RECOMMEND_ that you at least review the following
-settings, and decide if any are useful for you**
-
-All overridden RubyMine settings are documented here:
-https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
-
-I try to keep them updated with the current Jetbrains overridden settings which I use.
-
-You can use these to configure a new RubyMine installation, or to check for
-any settings which were missed by the SCM-based setup described above.
-
-## Additional Settings
-
-* Add `gst` alias in `~/.zshrc`: `alias gst='git status'`
-
-* Add following to `~/.gitconfig`
-  ```
-  [user]
-    name = Chad Woolley
-    email = cwoolley@gitlab.com
-  [alias]
-  gst = status
-  ci = commit
-  co = checkout
-  sw = switch
-  up = !git pull --rebase $(git rev-parse --abbrev-ref --symbolic @{u} | sed 's:/: :')
-  rbi = !git rebase -i $(git merge-base head master)
-  [credential]
-  helper = osxkeychain
-  [core]
-  untrackedCache = true
-  [push]
-  default = current
-  [pull]
-  rebase = true
-  [feature]
-  manyFiles = true
-  ```
 
 ## Additional Tools
 
@@ -792,6 +672,135 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [fzf](https://github.com/junegunn/fzf) - fuzzy finder
   * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
   * `brew install fzf`
+
+## JetBrains IDE Setup
+
+### UPDATE - See the JetBrains section in the GitLab handbook!
+
+Since the time that I wrote these setup docs, I have created a
+section in the GitLab handbook dedicated to Jetbrains IDEs, and their configuration and setup.
+There will be additional and updated info there. See:
+
+- [JetBrains IDEs](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/)
+- [Common JetBrains configuration and setup](https://handbook.gitlab.com/handbook/tools-and-tips/editors-and-ides/jetbrains-ides/setup-and-config/)
+
+### Overview
+
+There's a few sub-sections in this "Jetbrains IDE Setup" section. They go in a logical order that will result in the easiest
+and smoothest experience. I've tried to indicate which ones are **_REQUIRED_**, **_RECOMMENDED_**, or **_OPTIONAL_**
+
+### Common JetBrains IDE Setup
+
+#### JetBrains Toolbox Installation
+
+I consider the usage of JetBrains Toolbox **_REQUIRED_**. I **_DO NOT_** recommend trying to use Homebrew or manual installation
+to manage your JetBrains installations. Toolbox makes everything easier, there's no reason to not
+use it.
+
+* Install JetBrains Toolbox (used to manage all JetBrains IDE installations)
+  * Log into Jetbrains account which has licenses for IDEs you use (I pay for and use a personal
+    ultimate license which allows me to use any of the IDEs, you may use your gitlab JetBrains account)
+* Install all IDEs which you use
+
+### RubyMine-Specific IDE Setup
+
+The following sub-sections are mainly designed for RubyMine, but much of it is also
+applicable to other JetBrains IDEs, especially when using them within the GitLab
+environment.
+
+Note: Ensure you install all plugins FIRST, before configuring setup, so any
+plugin-specific configuration entries will be present.
+
+#### Storing RubyMine Project and IDE Config in Git SCM
+
+**NOTE: THIS SECTION DESCRIBES A CUSTOM APPROACH I CAME UP WITH, IT IS _OPTIONAL_ AND _ADVANCED_.
+I _DO NOT RECOMMEND_ it for people new to JetBrains.**
+But if you are a dedicated JetBrains user, this approach may come in useful across upgrades, and especially when
+setting up a new workstation in the future**
+
+* I use the following approach to keep my RubyMine GitLab config in source control:
+  https://gitlab.com/jetbrains-ide-config/jetbrains-ide-config-gitlab
+* However, this may not restore all settings! Even if you use this approach,
+  you should still go through the manual setup below to ensure all settings are
+  restored.
+* This approachis also kind of flaky. The credentials on the repository sync
+  are currently particularly problematic; syncing only seems to work when you
+  exit the VM.  
+
+#### RubyMine Plugins
+
+All of these plugins are **__OPTIONAL_** but many are very useful and some could be considered
+a **_REQUIREMENT_**. I recommend you review each one and make a decision whether you think it
+will be useful for you.
+
+This list changes often for various reasons. Some of these I use often, some I don't. Sometimes,
+JetBrains will promote a third-party plugin to a default Jetbrains-provided plugin, or build
+it into the IDE. Sometimes plugins are renamed or break in latest versions. But I try to
+keep this mostly up to date with my currently curated list. 
+
+TODO: Find a way to easily export this list instead of manually curating it.
+
+* Note on Markdown plugin:
+  * The Markdown plugin used to be buggy and slow, but it has gotten better in recent releases.
+  * If you use it on main GitLab repos, you will probably want change the setting:
+    * Languages and Settings -> Markdown: Automatic assistance in the editor: Turn off
+    * Otherwise the plugin will prevent numbering of ordered lists with all `1.`
+      and forces them to be sequential.
+      See bug: https://youtrack.jetbrains.com/issue/IDEA-292704/Do-not-automatically-number-lists-in-markdown
+
+* Utility Plugins
+  * .env files support
+  * [Lines Sorter Plus](https://plugins.jetbrains.com/plugin/18564-lines-sorter-plus)
+  * Rainbow Brackets - different colored bracket and parenthesis matching (https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
+  * String Manipulation - it, uh, manipulates strings (https://plugins.jetbrains.com/plugin/2162-string-manipulation)
+  * Ideolog (log files)
+  * Files Watcher
+  * [CamelCase](https://plugins.jetbrains.com/plugin/7160-camelcase) - switch between cases with Option+Shift+U
+* Workflow Plugins
+  * [GitLink](https://plugins.jetbrains.com/plugin/8183-gitlink) - easily open repo web links directly from code
+  * [CodeStream (by NewRelic)](https://plugins.jetbrains.com/plugin/12206-new-relic-codestream-github-gitlab-prs-and-code-review) - MRs/PRs and Code
+    * In Preferences -> Tools -> Codestream: Turn off "Show line-level blame". It's annoying, I'll open the gutter if I want to see the blame, this isn't VS Code! ;)
+    * I ended up disabling this one, I never used it much. I either use the GitLab Web UI or the GitLab Merge Requests plugin. It also seems to crash frequently and clutter the context menus with useless stuff.
+  * [GitLab Merge Requests](https://plugins.jetbrains.com/plugin/18689-gitlab-merge-requests) - still in beta and seems buggy, but UI is promising. In-IDE diffs and inline commenting on diffs.
+* AI Coding Assistance Plugins
+  * [GitHub CoPilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)
+  * [Tabnine](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-code-completion-js-java-python-ts-rust-go-php--more)
+* Personal Productivity
+  * [CodeTime](https://plugins.jetbrains.com/plugin/15507-codetime) - static analysis and reports of coding patterns
+* Keystroke-Learning Plugins
+  * Force Shortcuts (if you are hardcore and want to be forced to use keyboard, I leave it disabled)
+  * Key Promoter X (if you want to be always reminded to use keyboard)
+  * Presentation Assistant (if you are pair programming, and want other people to see what keystrokes you are using)
+* Fun Plugins
+  * Nyan Progress Bar
+* Language/Coding Plugins
+  * GraphQL
+  * Prettier
+  * TOML
+  * Vue.js
+  * Makefile Language
+  * 
+
+#### GitLab-specific Rubymine Project Structure Settings
+
+Here is a screenshot of my current Project Structure settings. 
+
+The [exclusions are especially important, because these help reduce indexing time](https://www.jetbrains.com/help/ruby/indexing.html#exclude).
+
+![gitlab-rubymine-project-structure](https://gitlab.com/cwoolley-gitlab/cwoolley-gitlab/uploads/c2a75b6f5b5e88f67ad1acd3dbb6ee7c/gitlab-rubymine-project-structure.png)
+
+#### RubyMine Manual Setup
+
+**If you use RubyMine or other Jetbrains IDEs, I _RECOMMEND_ that you at least review the following
+settings, and decide if any are useful for you**
+
+All overridden RubyMine settings are documented here:
+https://github.com/thewoolleyman/workstation/blob/master/README.md#jetbrains-overridden-settings
+
+I try to keep them updated with the current Jetbrains overridden settings which I use.
+
+You can use these to configure a new RubyMine installation, or to check for
+any settings which were missed by the SCM-based setup described above.
 
 ## Virtual Machine Setup
 
