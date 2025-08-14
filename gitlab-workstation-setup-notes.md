@@ -558,6 +558,16 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [Clocker](https://apps.apple.com/us/app/clocker/id1056643111?mt=12) from app store
   * Date/Time Zone app for Mac menu bar
   * Add locations, favorite them to show on menu bar
+* Adobe Acrobat (Pro if you have a license, Reader if you don't)
+  * Pro: Install Adobe Account Access authenticator app
+
+* ~~MeetingBar (from App Store)~~ (I don't use this anymore)
+
+* Speedtest App (from App Store)
+
+* Transmit 5 (from App Store)
+  * Useful for uploading files to S3/Blobstore
+
 
 
 ----
@@ -571,17 +581,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 ----
 
 
-
-* Adobe Acrobat (Pro if you have a license, Reader if you don't)
-  * Pro: Install Adobe Account Access authenticator app
-
-* MeetingBar (from App Store)
-  * TODO: Set up, required Calendar setup
-
-* Speedtest App (from App Store)
-
-* Transmit 5 (from App Store)
-  * Useful for uploading files to S3/Blobstore
 
 * iStat Menus (from App Store)
   * Check: Combined
@@ -598,9 +597,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Items to show in dropdown: All
 
 * Kindle (from App Store)
-
-* Krisp
-  * TODO: Install
 
 * [Zed](https://zed.dev/)
   * Fast Collaborative editor
