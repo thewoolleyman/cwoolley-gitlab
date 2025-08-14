@@ -144,9 +144,11 @@ Click `Apple` menu on taskbar and `System Settings`
     * Turn off "slightly dim the display when on battery power"
   * Power Adapter
     * High Power
-* Display - Display Settings...
-  * Turn off "Automatically Adjust Brightness"
-  * Turn off "True Tone"
+* Display
+  * Display Settings...
+    * Turn off "Automatically Adjust Brightness"
+    * Turn off "True Tone"
+  * Advanced: Turn off “Allow your pointer and keyboard to move between any nearby Mac or iPad”
 
 ### macOS Other Settings
 
