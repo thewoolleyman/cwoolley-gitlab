@@ -497,11 +497,12 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Choosy
   * ~~Deluminate~~
   * JSON Formatter
-  * ~~Window Namer and Restorer BETA~~ (No longer in Chrome store, but I'm hoping to write a replacement "someday")
   * Kagi search (optional, I pay for Kagi as an ad-free alternative to Google search engine)
-  * ~~Tab Manager Plus for Chrome~~
+  * Meetings Page Auto Closer for Zoom
   * ~~Snowplow Debugger~~
+  * ~~Tab Manager Plus for Chrome~~
   * syncmarx
+  * ~~Window Namer and Restorer BETA~~ (No longer in Chrome store, but I'm hoping to write a replacement "someday")
   * Vuejs Devtools
   * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
   * [GitLab Web Debugger](https://chromewebstore.google.com/detail/gitlab-web-debugger/pjpihpogiidfbgdbmkmmhileaijeakan)
@@ -509,25 +510,16 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * 1Password CLI
   * https://developer.1password.com/docs/cli/shell-plugins/gitlab/
 
-
-----
-----
-----
-
-**TODO: Finish updating instructions for new machine below here...**
-
-----
-----
-----
-
-
-
 * Docker or other Containerization Tools
   * See the [Containers](#containers) section below for details. 
 
-* Bartender 4 - Manage MacOS Menu Items on MacBooks with camera notch
-  * Menu Bar Item Spacing - Small
-  * Only show necessary/desired menu items
+* Bartender 5 - Manage MacOS Menu Items on MacBooks with camera notch
+  * Settings -> General
+    * Start at login: checked
+    * Menu bar item spacing: Tiny
+  * Settings -> Menu Bar Items  
+    * Drag icons to only show necessary/desired menu items
+    * Add menu bar item groups if desired
 
 * [Rectangle](https://rectangleapp.com) (window organizer)
   * Give accessibility permissions
@@ -543,9 +535,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 
 * [Clipy](https://clipy-app.com/)
   * Install, launch on system startup.
-  * Change Prefs:
+  * Change Prefs (click in task bar, it's a clipboard icon):
     * General -> max clipboard history size 2000
-    * General -> Appearance -> Status Bar icon style: none (open via shortcut if you need to access prefs)
     * Menu -> inline: 30, inside folder: 30, characters in menu: 200
     * Change main shortcut Ctrl+Opt+Cmd+V, disable other shortcuts (to not conflict with Jetbrains)
 
@@ -554,7 +545,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Rules
     * Disable rule "Some browsers are running"
     * Change default behavior to always open Chrome
-    * TODO: Configure apps for personal projects (Rider, Visual Studio) to open in Brave.
+    * Add rules as necessary. Or, if migrating from old machine, copy plist file from old machine under `/Users/you/Library/Application Support/Choosy/`
+    * (OPTIONAL) Configure apps for personal projects (Rider, Visual Studio) to open in Brave.
   * Advanced: Start at login, don't display icon in menu bar
 
 * [Contexts](https://contexts.co) better window switcher
@@ -563,6 +555,20 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 
 * [Clocker](https://apps.apple.com/us/app/clocker/id1056643111?mt=12) from app store
   * Date/Time Zone app for Mac menu bar
+  * Add locations, favorite them to show on menu bar
+
+
+----
+----
+----
+
+**TODO: Finish updating instructions for new machine below here...**
+
+----
+----
+----
+
+
 
 * Adobe Acrobat (Pro if you have a license, Reader if you don't)
   * Pro: Install Adobe Account Access authenticator app
