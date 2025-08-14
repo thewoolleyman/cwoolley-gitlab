@@ -371,6 +371,45 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 * `git pull` to get latest commit
 * `make bootstrap`
 
+### GDK Configuration
+
+* Set up gdk.test as hostname, loopback, etc: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
+* I also create an additional loopback based on https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md#macos,
+  for the IP address I have in my local router DHCP for my machine, in `/Library/LaunchDaemons/org.gitlab2.ifconfig.plist`:
+  * `sudo cp org.gitlab1.ifconfig.plist org.gitlab2.ifconfig.plist`
+  * Use `sudo vi` to edit the file and change the `string` to `...gitlab2`, and the IP to your local network DHCP IP (e.g. `192.168.1.2`)
+  * Then change the ownership on it too:
+
+  ```
+  sudo chown root:wheel /Library/LaunchDaemons/org.gitlab2.ifconfig.plist
+  sudo chmod 644 /Library/LaunchDaemons/org.gitlab2.ifconfig.plist
+  ```
+
+### mise configuration
+
+- Symlink the `gitlab` repo's `.tool-versions` file to the home directory, so it applies globally. This helps ensure that even outside
+  the gitlab repo, you are always using tool versions which are installed and up-to-date by the latest GDK update.
+  - For example: `ln -s ~/workspace/gitlab-development-kit/gitlab/.tool-versions .tool-versions`
+
+## Optional/Recommended GitLab Tools/Setup
+
+* Git command prompt
+  * I use the `~/.git-prompt.sh` script as described in
+    [this blog post](https://about.gitlab.com/blog/2016/12/08/git-tips-and-tricks/#see-the-repository-status-in-your-terminals-prompt),
+    with some customizations. 
+  * I have the following in my `~/.zshrc`:
+    ```sh
+    # Git prompt
+    GIT_PS1_SHOWCOLORHINTS=true
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWUNTRACKEDFILES=true
+    GIT_PS1_SHOWUPSTREAM="auto verbose name git"
+    source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
+    
+    # shows branch name
+    precmd () { __git_ps1 "%1~" "$ " " (%s)" }
+    ```
+
 
 
 ----
@@ -382,28 +421,6 @@ TODO: Finish updating instructions for new machine below here...
 ----
 
 
-
-### GDK Configuration
-
-* Set up gdk.test as hostname: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/local_network.md
-
-## Optional/Recommended GitLab Tools/Setup
-
-* Git command prompt
-  * I use the `~/.git-prompt.sh` script as described in
-    [this blog post](https://about.gitlab.com/blog/2016/12/08/git-tips-and-tricks/#see-the-repository-status-in-your-terminals-prompt),
-    with some customizations. I have the following in my `~/.zshrc`:
-    ```sh
-    # Git prompt
-    GIT_PS1_SHOWCOLORHINTS=true
-    GIT_PS1_SHOWDIRTYSTATE=true
-    GIT_PS1_SHOWUNTRACKEDFILES=true
-    GIT_PS1_SHOWUPSTREAM="auto verbose name git"
-    source ~/.git-prompt.sh
-    
-    # shows branch name
-    precmd () { __git_ps1 "%1~" "$ " " (%s)" }
-    ```
 
 * Set up browser to search like a pro with Chrome keyword shortcuts: https://about.gitlab.com/handbook/tools-and-tips/searching/
   * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
@@ -424,14 +441,6 @@ TODO: Finish updating instructions for new machine below here...
     a custom location like "~/Google Drive Personal Account"
 * GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
 * TODO: network monitor
-
-## Environment setup
-
-### mise
-
-- Symlink the `gitlab` repo `.tool-versions` file to the home directory, so it applies globally. This helps ensure that even outside
-  the gitlab repo, you are always using tool versions which are installed and up-to-date by the latest GDK update.
-  - For example: `ln -s ~/workspace/gitlab-development-kit/gitlab/.tool-versions .tool-versions`
 
 ## JetBrains IDE Setup
 
