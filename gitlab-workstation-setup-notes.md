@@ -463,28 +463,16 @@ manyFiles = true
 	repo = /Users/cwoolley/workspace/gitlab-development-kit/gitlab
 ```
 
-
 ## Other GitLab tools setup
 
 * Set up browser to search like a pro with Chrome keyword shortcuts: https://about.gitlab.com/handbook/tools-and-tips/searching/
   * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
 * ~~Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/~~ (I don't really use this anymore, but it can be useful)
 
-----
-----
-----
-TODO: Finish updating instructions for new machine below here...
-----
-----
-----
-
-
-
-
 ## Additional Tools
 
 **NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use 
-Homebrew casks or other package managers to install and manage macOS `*.app` applications.**
+Homebrew casks or other package managers to install and manage macOS `*.app` applications, unless otherwise specified.**
 
 * (See also this great list of CLI tools from the always-awesome @b0rk (https://twitter.com/b0rk): https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/)
 
@@ -495,30 +483,44 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Important Chrome Extensions (these and others should sync automatically once logged into Google account)
     * Chrome JSON Formatter extension: https://github.com/callumlocke/json-formatter
     * [1password](https://1password.com/downloads/mac/)
-    * [syncmarx](https://syncmarx.gregmcleod.com/) bookmark syncer
+    * [syncmarx](https://syncmarx.gregmcleod.com/) bookmark syncer - set up with Dropbox account
   * Log into all necessary chrome extensions
 
 * Brave - Personal-only browser
-  * Create a "sync chain" on existing old workstation, save it to 1Password, sync to new workstation.
-  * Sync everything but bookmarks (these is done via syncmarx)
+  * Create a "sync chain" on existing old workstation (Under `Settings -> Sync`), save it to 1Password, sync to new workstation.
+  * Sync everything but bookmarks(these is done via syncmarx), reading list, and saved tab groups
 
-* Browser plugins (These will sync automatically through Chrome profile). Some of these are in chrome, some are in Brave, some in both. Depends on usage of the plugin:
+* Browser plugins (These will sync automatically through Chrome profile). Some of these are in chrome, some are in Brave, some in both. Depends on usage of the plugin. NOTE: The ones with ~~strikethrough~~ are not currently approved for use in Chrome by GitLab security:
+  * [GitLab Conventional Comments button](https://chromewebstore.google.com/detail/gitlab-conventional-comme/hmacdnkefahecfccbjgbjdolhodmnhee)
   * 1Password
-  * Choosy
-  * Deluminate
-  * Window Namer and Restorer
-  * Tab Manager Plus for Chrome
-  * Snowplow Inspector
-  * GitPod
-  * GitLab Notify
-  * Vuejs Devtools
   * Apollo Client Devtools
+  * Choosy
+  * ~~Deluminate~~
+  * JSON Formatter
+  * ~~Window Namer and Restorer BETA~~ (No longer in Chrome store, but I'm hoping to write a replacement "someday")
+  * Kagi search (optional, I pay for Kagi as an ad-free alternative to Google search engine)
+  * ~~Tab Manager Plus for Chrome~~
+  * ~~Snowplow Debugger~~
+  * syncmarx
+  * Vuejs Devtools
   * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
   * [GitLab Web Debugger](https://chromewebstore.google.com/detail/gitlab-web-debugger/pjpihpogiidfbgdbmkmmhileaijeakan)
-  * [Conventional Comments button](https://chromewebstore.google.com/detail/conventional-comments/pagggmojbbphjnpcjeeniigdkglamffk?hl=en-US&utm_source=ext_sidebar)
 
 * 1Password CLI
   * https://developer.1password.com/docs/cli/shell-plugins/gitlab/
+
+
+----
+----
+----
+
+**TODO: Finish updating instructions for new machine below here...**
+
+----
+----
+----
+
+
 
 * Docker or other Containerization Tools
   * See the [Containers](#containers) section below for details. 
