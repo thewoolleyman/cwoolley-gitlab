@@ -276,13 +276,30 @@ Host old-machine
 
 ### Copy files
 
-IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data to a machine which is not owned by GitLab, e.g. via the jump box
-approach shown above. If you have any doubts, use a machine-to-machine solution such as AirDrop.
+IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data to a machine which is not owned by GitLab,
+e.g. via the jump box approach shown above. If you have any doubts, use a machine-to-machine solution such as AirDrop.
+
+Files/directories to consider copying:
+
+- `~/workspace` (where I keep all my cloned projects)
+- `~/Downloads`
+- `~/Documents`
+- `~/.zshrc`
+- `~/.config`
+- `~/.tool-versions`
 
 #### Using rsync
 
 * Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`. Add more `v`s for more verbosity.
 * Using an `rsync` command similar to the above, copy over necessary files from old workstation.
+
+#### Alternate approach with SFTP
+
+If, instead of rsync, you are using an SFTP-based tool to transfer that does not support `ProxyJump`
+(such as [Panic Transmit](https://panic.com/transmit/)), you'll need a different approach:
+
+- On the linux jump box: `ssh -vvv -N -T -g -o ExitOnForwardFailure=yes -L 0.0.0.0:40022:127.0.0.1:2222 localhost`
+- Then just use SFTP to connect to `my-local-linux-machine` on port `40022`, which will represent the filesystem of `old-machine`
 
 #### Using Airdrop
 
