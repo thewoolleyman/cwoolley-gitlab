@@ -493,7 +493,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * `brew install fzf`
   * Add to `.zshrc`: `source <(fzf --zsh)`
 
-* k9s - CLI Kubernetes admin tool - `brew install k9s`
+* `k9s` - CLI Kubernetes admin tool - `brew install k9s`
+
+* `kubens` - change kubernetes namespaces - `brew install kubectx`
 
 ### Browsers
 
