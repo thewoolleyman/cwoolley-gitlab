@@ -653,6 +653,25 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Connect work and personal accounts
   * Allow notifications
 
+## Other optional stuff (Chad's personal apps/tools)
+
+* Logseq
+* Obsidian
+* Discord
+* CleanMyMac X - Go to my.macpaw.com and switch to new device
+* Kindle (from App Store)
+* Spotify
+* Microsoft Edge
+* Steam
+  - Go to System Settings → Privacy & Security.
+	- Scroll down to Security section — you should see: `<some file> was blocked from use because it is not from an identified developer`
+	- Click Open Anyway
+* WhatsApp
+* Facebook Messenger
+
+
+
+
 ----
 ----
 ----
@@ -664,19 +683,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 ----
 
 
-
-## Other optional stuff
-
-* Logseq
-* Obsidian
-* Discord
-* CleanMyMac X
-* Kindle (from App Store)
-* Spotify
-* Microsoft Edge
-* Steam
-* WhatsApp
-* Facebook Messenger
 
 ## JetBrains IDE Setup
 
