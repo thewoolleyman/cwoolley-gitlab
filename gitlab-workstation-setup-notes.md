@@ -2,40 +2,7 @@
 
 # Table of Contents
 
-* [Overview](#overview)
-  * [Philosophy and Background](#philosophy-and-background)
-* [Setup Notes](#setup-notes)
-  * [Basic macOS Setup](#basic-macos-setup)
-  * [Required GitLab Tools](#required-gitlab-tools)
-  * [GitLab Developer Environment](#gitlab-developer-environment)
-    * [GDK Setup](#gdk-setup)
-      * [GDK Setup with Apple Silicon](#gdk-setup-with-apple-silicon)
-      * [GDK Setup with Rosetta](#gdk-setup-with-rosetta)
-      * [Homebrew Installation and Architecture Notes](#homebrew-installation-and-architecture-notes)
-    * [GDK Configuration](#gdk-configuration)
-  * [Optional/Recommended GitLab Tools/Setup](#optionalrecommended-gitlab-toolssetup)
-  * [JetBrains IDE Setup](#jetbrains-ide-setup)
-    * [Common JetBrains IDE Setup](#common-jetbrains-ide-setup)
-      * [JetBrains Toolbox Installation](#jetbrains-toolbox-installation)
-    * [RubyMine-Specific IDE Setup](#rubymine-specific-ide-setup)
-      * [Storing RubyMine Project and IDE Config in git SCM](#storing-rubymine-project-and-ide-config-in-git-scm)
-      * [RubyMine Plugins](#rubymine-plugins)
-      * [RubyMine Manual Setup](#rubymine-manual-setup)
-  * [Additional Settings](#additional-settings)
-    * [macOS Settings](#macos-settings)
-      * [macOS System Settings Settings](#macos-system-preferences-settings)
-      * [macOS Other Settings](#macos-other-settings)
-  * [Additional Tools](#additional-tools)
-  * [Virtual Machine Setup](#virtual-machine-setup)
-    * [Ubuntu Server under Multipass](#ubuntu-server-under-multipass)
-    * [Parallels Desktop Pro](#parallels-desktop-pro)
-      * [Ubuntu Desktop under Parallels](#ubuntu-desktop-under-parallels)
-      * [Windows 11 under Parallels](#windows-11-under-parallels)
-      * [macOS under Parallels](#macos-under-parallels)
-    * [VMWare Fusion](#vmware-fusion)
-      * [Ubuntu Desktop under VMWare Fusion](#ubuntu-desktop-under-vmware-fusion)
-      * [Windows 11 under VMWare Fusion](#windows-11-under-vmware-fusion)
-  * [Containers](#containers)    
+[TOC]
 
 # Overview
 
@@ -197,14 +164,18 @@ These will be required by iTerm2, so go ahead and install them
 iTerm2 is my preferred terminal, so I set it up before moving on to the next steps which require CLI commands.
 
 * iTerm2
-  * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
-  * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
-  * Appearance -> Dimming -> Dim background windows
-  * Profiles -> Default (starred) Profile
-    * General -> Initial Directory: Select "Reuse previous session's directory"
-    * Text -> Font size 14
-    * Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
-    * Keys -> Left Option acts as `Esc+`
+  * ITerm2:
+    * Make iTerm2 default term
+    * Install shell integration
+  * Settings:
+    * General -> Selection -> "Characters considered part of word for selection:" -> Remove "`\`"
+    * Appearance -> Tabs: Check "Show tab bar even when there is only one tab"
+    * Appearance -> Dimming -> Dim background windows
+    * Profiles -> Default (starred) Profile
+      * General -> Initial Directory: Select "Reuse previous session's directory"
+      * Text -> Font size 14
+      * Terminal -> Scrollback Buffer -> Scrollback lines: Check "Unlimited Scrollback"
+      * Keys -> Left Option acts as `Esc+`
 
 ## Google Drive setup
 
@@ -471,12 +442,40 @@ manyFiles = true
   * NOTE: If you have your Google Chrome profile sync from a previous machine, this will sync too.
 * ~~Set up GitDock: https://about.gitlab.com/blog/2021/10/05/gitpod-desktop-app-personal-activities/~~ (I don't really use this anymore, but it can be useful)
 
-## Additional Tools
+## Additional Apps and Tools
 
 **NOTE: Unless otherwise specified, these are all manually downloaded and installed. I don't use 
 Homebrew casks or other package managers to install and manage macOS `*.app` applications, unless otherwise specified.**
 
+### Terminals
+
+* iTerm2 (see iTerm2 instructions above for install and configure)
+
+* [Warp](https://warp.dev) AI terminal
+
+### CLI tools
+
 * (See also this great list of CLI tools from the always-awesome @b0rk (https://twitter.com/b0rk): https://jvns.ca/blog/2022/04/12/a-list-of-new-ish--command-line-tools/)
+
+* 1Password CLI
+  * https://developer.1password.com/docs/cli/shell-plugins/gitlab/
+
+* [tldr](https://tldr.sh/) - better man page alternative
+  * `brew install tldr`
+
+* [ugrep](https://github.com/Genivia/ugrep#readme) - better grep alternative
+  * `brew install ugrep`
+
+* [ripgrep](https://github.com/BurntSushi/ripgrep#installation) - better grep alternative
+  * `brew install ripgrep`
+
+* [fzf](https://github.com/junegunn/fzf) - fuzzy finder
+  * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
+  * `brew install fzf`
+
+* k9s - CLI Kubernetes admin tool - `brew install k9s`
+
+### Browsers
 
 * Google Chrome - GitLab-only browser
   * Sign in to GitLab Google account via "Turn on Sync"
@@ -509,11 +508,40 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln/related?hl=en-GB)
   * [GitLab Web Debugger](https://chromewebstore.google.com/detail/gitlab-web-debugger/pjpihpogiidfbgdbmkmmhileaijeakan)
 
-* 1Password CLI
-  * https://developer.1password.com/docs/cli/shell-plugins/gitlab/
+* [Choosy](https://www.choosyosx.com/)
+  * Make default browser
+  * Rules
+    * Disable rule "Some browsers are running"
+    * Change default behavior to always open Chrome
+    * Add rules as necessary. Or, if migrating from old machine, copy plist file from old machine under `/Users/you/Library/Application Support/Choosy/`
+    * (OPTIONAL) Configure apps for personal projects (Rider, Visual Studio) to open in Brave.
+  * Advanced: Start at login, don't display icon in menu bar
+
+### Editors
+
+* VS Code
+
+* Cursor editor
+  * Cline AI plugin
+
+* [Zed](https://zed.dev/)
+  * Fast Collaborative editor
+
+* TextMate
+  * Settings -> Projects -> Include Files Matching: `{*,.*}`
+  * Settings -> Terminal _> Install Shell support
+  * Configure autosave: add `saveOnBlur = true` to top of `~/Library/Application\ Support/TextMate/Global.tmProperties`
+
+* CotEditor (from app store) - Lightweight editor
+
+### Applications
 
 * Docker or other Containerization Tools
   * See the [Containers](#containers) section below for details. 
+
+* Claude Desktop app
+
+* ChatGPT Desktop app
 
 * Bartender 5 - Manage MacOS Menu Items on MacBooks with camera notch
   * Settings -> General
@@ -542,15 +570,6 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Menu -> inline: 30, inside folder: 30, characters in menu: 200
     * Change main shortcut Ctrl+Opt+Cmd+V, disable other shortcuts (to not conflict with Jetbrains)
 
-* [Choosy](https://www.choosyosx.com/)
-  * Make default browser
-  * Rules
-    * Disable rule "Some browsers are running"
-    * Change default behavior to always open Chrome
-    * Add rules as necessary. Or, if migrating from old machine, copy plist file from old machine under `/Users/you/Library/Application Support/Choosy/`
-    * (OPTIONAL) Configure apps for personal projects (Rider, Visual Studio) to open in Brave.
-  * Advanced: Start at login, don't display icon in menu bar
-
 * [Contexts](https://contexts.co) better window switcher
   * Sidebar: Show sidebar on no display, uncheck auto adjust windows widths
   * Command-Tab: Check "Typing characters starts fast search"
@@ -561,6 +580,11 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Adobe Acrobat (Pro if you have a license, Reader if you don't)
   * Pro: Install Adobe Account Access authenticator app
 
+* iStat Menus 7 (from App Store)
+  * On install: Check everything but Weather, Power, and Time
+  * Check: Combined (last icon with circles)
+  * Switch to show stats as desired
+
 * ~~MeetingBar (from App Store)~~ (I don't use this anymore)
 
 * Speedtest App (from App Store)
@@ -568,59 +592,19 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Transmit 5 (from App Store)
   * Useful for uploading files to S3/Blobstore
 
-
-
-----
-----
-----
-
-**TODO: Finish updating instructions for new machine below here...**
-
-----
-----
-----
-
-
-
-* iStat Menus (from App Store)
-  * Check: Combined
-  * Uncheck: Time
-  * CPU
-    * Active: time graph 
-    * App usage Format: 0-100%
-  * Network
-    * Active: up/down KB/s
-  * Sensors
-    * Download and install iStat menus helper
-  * Combined
-    * Items to whow in menubar: CPU & GPU, Network
-    * Items to show in dropdown: All
-
-* Kindle (from App Store)
-
-* [Zed](https://zed.dev/)
-  * Fast Collaborative editor
-
-* TextMate
-  * Preferences -> Projects -> Include Files Matching: `{*,.*}`
-  * Preferences -> Terminal _> Install Shell support
-  * Configure autosave: add `saveOnBlur = true` to top of `~/Library/Application\ Support/TextMate/Global.tmProperties`
-
-* CotEditor (from app store) - Lightweight editor
-
 * [Ears](https://retina.studio/ears/) - Quickly switch audio input/output
-  * Prefs: Change devices immediately, Display notification when device changes, Start ears at login
+  * Settings:
+    * Shortcut: `Ctrl-Option-Cmd-e`
+    *  Change devices immediately, Display notification when device changes, Start ears at login
 
 * [Timing App](https://timingapp.com) - automatic time tracking by app usage
-  * Ensure that video calls show notifications, and all Timing notifications are allowed in system 
+  * (TODO: is this still needed???) Ensure that video calls show notifications, and all Timing notifications are allowed in system 
     settings with highest visibility level.
   * TODO: Configure rest of settings
 
-* [Warp](https://warp.dev) terminal
-
-* Marked (from app store) - Markdown previewer and processor
-
 * Grand Perspective (from app store) - Disk usage visualizer
+
+* ~~Marked (from app store) - Markdown previewer and processor~~ (Don't use this anymore)
 
 * Visual Studio for Mac - For .NET development (F#)
 
@@ -635,7 +619,10 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Add Google GitLab account (will need to auth with okta)
     * Add Google personal account
 
-* MeetingBar (from App Store) - Meeting reminder app
+* [Alfred](https://www.alfredapp.com/) - Productivity app
+  * Unset `Cmd-Space` from MacOS Default spotlight and reassign to Alfred
+
+* ~~MeetingBar (from App Store) - Meeting reminder app~~ (Don't use this anymore, didn't set up)
   * First, ensure you have calendars set up in Mac calendar app.  If you do, do it, then restart the
     MeetingBar app. Otherwise calendars may not show up.
   * Install options
@@ -655,29 +642,35 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Time format: 12 hour
     * Check "details in submenu"
 
-* Cron - Calendar app
+* ~~Cron - Calendar app~~ (Don't use this anymore)
   * cron.com - currently early access, need invite.
   * Connect work and personal accounts
   * Allow notifications
 
-* [Alfred](https://www.alfredapp.com/)
-  * Productivity app.
+----
+----
+----
 
-* Keyboard Maestro - Previously used, but didn't install this time, had stopped working on 
-  previous machine. Alfred seems to be an alternative that does everything.
+**TODO: Finish updating instructions for new machine below here...**
 
-* [tldr](https://tldr.sh/) - better man page alternative
-  * `brew install tldr`
+----
+----
+----
 
-* [ugrep](https://github.com/Genivia/ugrep#readme) - better grep alternative
-  * `brew install ugrep`
 
-* [ripgrep](https://github.com/BurntSushi/ripgrep#installation) - better grep alternative
-  * `brew install ripgrep`
 
-* [fzf](https://github.com/junegunn/fzf) - fuzzy finder
-  * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
-  * `brew install fzf`
+## Other optional stuff
+
+* Logseq
+* Obsidian
+* Discord
+* CleanMyMac X
+* Kindle (from App Store)
+* Spotify
+* Microsoft Edge
+* Steam
+* WhatsApp
+* Facebook Messenger
 
 ## JetBrains IDE Setup
 
