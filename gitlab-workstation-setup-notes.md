@@ -42,6 +42,7 @@ And, my primary development environment is JetBrains IDEs, not Vim/Emacs/VSCode,
 for any given dev ecosystem, almost all basic things "just work out of the box" with
 little or no configuration required (yes, I'm a JetBrains stan, feel free to schedule
 a meeting with me if you'd like to learn how it can make you more productive ;) )
+
 Anyway, this means that there's relatively few config file entries I need to directly manage,
 and therefore it's not worth the overhead to manage it in source control,
 but instead just document the entries here. As noted above, I do have a process for
@@ -49,6 +50,14 @@ but instead just document the entries here. As noted above, I do have a process 
 in source control. This is primarily to let me identify/revert any unexpected breaking changes,
 but it was also handy to save some time setting up Jetbrains a new workstation. However it didn't
 capture every config change; some stuff still needed manual re-setup for a new install.
+
+**_NOTE: The exception to the above guidelines is when I copy over application-specific configuration files
+from an old machine to a new machine. In many cases, this is simpler and saves time. Specifically,
+these are user settings which live under the
+[XDG Base Directory Standard directories](https://wiki.archlinux.org/title/XDG_Base_Directory),
+and selected MacOS App settings under `$HOME/Library/Application Settings`. See the
+["Copy files" section](#copy-files) for more details_**
+
 
 So, what follows are a list of the steps I've taken and tools I've installed to set up my
 GitLab workstation. Not everything is documented in full detail, and I've installed many other
@@ -669,22 +678,11 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * WhatsApp
 * Facebook Messenger
 
-
-
-
-----
-----
-----
-
-**TODO: Finish updating instructions for new machine below here...**
-
-----
-----
-----
-
-
-
 ## JetBrains IDE Setup
+
+**IMPORTANT NOTE: THIS SECTION MAY BE OUT OF DATE: Because I directly copied over all my JetBrains configuration at the filesystem level,
+I did not review or update this section when I got my new machine in August 2025. It is still a good reference if you are setting
+up JetBrains IDEs your machine from scratch, but know that it may be outdated.**
 
 ### UPDATE - See the JetBrains section in the GitLab handbook!
 
@@ -815,7 +813,7 @@ any settings which were missed by the SCM-based setup described above.
 
 ## Virtual Machine Setup
 
-TODO: Work In Progress, Incomplete!
+**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
 
 ### Ubuntu Server Under Multipass
 
@@ -909,6 +907,8 @@ Setup:
 
 
 ## Containers
+
+**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
 
 **IMPORTANT NOTE: Before using Docker Desktop, ensure you are in compliance with the Docker license.**
 
