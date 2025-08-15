@@ -290,6 +290,8 @@ Files/directories to consider copying:
     - `~/.config`
     - `~/.local/share`
   - Other dotfiles directly in `~`
+    - Specifically, you may want history files. E.g., `ls -al1 ~/ | grep -i history` on old machine, and copy them over.
+      Make sure you shut down any apps which use the files so they don't get overwritten on exit or next use.
 
 #### Using rsync
 
@@ -487,6 +489,7 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [fzf](https://github.com/junegunn/fzf) - fuzzy finder
   * "It's an interactive Unix filter for command-line that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc."
   * `brew install fzf`
+  * Add to `.zshrc`: `source <(fzf --zsh)`
 
 * k9s - CLI Kubernetes admin tool - `brew install k9s`
 
@@ -548,6 +551,7 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
   * Configure autosave: add `saveOnBlur = true` to top of `~/Library/Application\ Support/TextMate/Global.tmProperties`
 
 * CotEditor (from app store) - Lightweight editor
+  - `sudo ln -s /Applications/CotEditor.app/Contents/SharedSupport/bin/cot /usr/local/bin/cot`
 
 ### Applications
 
