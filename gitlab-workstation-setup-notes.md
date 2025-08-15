@@ -339,9 +339,10 @@ If, instead of rsync, you are using an SFTP-based tool to transfer that does not
 ### Install Xcode developer tools
 
 * Run `xcode-select --install` (this is a prerequisite for GDK, but listed here seprately).
-* (OPTIONAL) Install Xcode IDE from app store
-  * The full ZXcode IDE may be optional? I never use it. I'm going to see if I can just get along with developer tools on
-    this install, because I don't like how it hijacks most source code extensions to open XCode by default.
+* Install Xcode IDE from App Store
+  * Even though you may not use the Xcode IDE, some things (like GitLab Agent for Kubernetes and thus GitLab Workspaces)
+    may need `xcodebuild`, which only comes with full XCode, so go ahead and install it
+  * Run `sudo xcodebuild -license accept` to accept the license.
 
 ### Install Homebrew
 
