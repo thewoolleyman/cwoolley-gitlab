@@ -908,11 +908,7 @@ Setup:
 
 ## Containers
 
-**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
-
 **IMPORTANT NOTE: Before using Docker Desktop, ensure you are in compliance with the Docker license.**
-
-TODO: Document setup of container (i.e. Docker, Kubernetes) support and tools.
 
 See the following issue for discussion and links on various/preferred tools and support:
 
@@ -924,3 +920,9 @@ See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handboo
 * Colima
 * nerdctl + lima
 * Other???
+
+For my personal usage:
+- I installed Rancher Desktop for GitLab-related usage, using the instructions at
+  https://gitlab.com/gitlab-org/workspaces/gitlab-workspaces-docs/-/blob/main/doc/local-development-environment-setup.md
+- I may still consider installing Docker Desktop, using my own license, for use only with personal projects, if the provided container management
+  CLI tools from Rancher Desktop are not adequate in some cases.
