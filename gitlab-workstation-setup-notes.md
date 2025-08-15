@@ -273,15 +273,21 @@ Files/directories to consider copying:
 - `~/Downloads`
 - `~/Documents`
 - `~/.zshrc`
-- `~/.config`
 - `~/.tool-versions`
+- Various settings files and subdirectories (decide on a case-by-case basis whether it makes sense to preserve them or start fresh):
+  - MacOS App settings
+    `~/Library/Application Settings`
+  - [XDG Base Directory Standard directories](https://wiki.archlinux.org/title/XDG_Base_Directory):
+    - `~/.config`
+    - `~/.local/share`
+  - Other dotfiles directly in `~`
 
 #### Using rsync
 
-* Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`. Add more `v`s for more verbosity.
+* Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`. Add more `v`s for more verbosity. Add `--stats` for stats at end.
 * Using an `rsync` command similar to the above, copy over necessary files from old workstation.
 
-#### Alternate approach with SFTP
+#### Using SFTP
 
 If, instead of rsync, you are using an SFTP-based tool to transfer that does not support `ProxyJump`
 (such as [Panic Transmit](https://panic.com/transmit/)), you'll need a different approach:
