@@ -359,6 +359,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 * Make sure your SSH key is installed (see instructions above)
 * Make sure you have Xcode developer tools installed (see instructions above)
 * Make sure you have Homebrew installed (see instructions above)
+* If you will be using nginx (required for GitLab Workspaces), `brew install nginx`
 
 #### If you do not yet have GDK install
 
@@ -366,7 +367,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
    * Run GDK one-line installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/_index.md#one-line-installation
    * Simple installation: https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/_index.md#simple-installation
 
-#### If you alredy have a GDK install
+#### If you already have a GDK install
 
 * **IF YOU ALREADY HAVE A GDK CLONE COPIED FROM OLD MACHINE, USE THESE INSTRUCTIONS...**
 
@@ -542,8 +543,8 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * Cursor editor
   * Cline AI plugin
 
-* [Zed](https://zed.dev/)
-  * Fast Collaborative editor
+* [Zed](https://zed.dev/) - Fast Collaborative editor
+  - `Install CLI` from menu
 
 * TextMate
   * Settings -> Projects -> Include Files Matching: `{*,.*}`
