@@ -207,7 +207,7 @@ iTerm2 is my preferred terminal, so I set it up before moving on to the next ste
 
 ## Migration from previous machine
 
-### Copy over /etc/hosts
+### Manually copy over /etc/hosts
 
 You can just do this via a Slack or email message to yourself, e.g.
 
@@ -215,8 +215,9 @@ You can just do this via a Slack or email message to yourself, e.g.
 - Paste to yourself
 - New machine: `sudo vi /etc/hosts`, paste in contents
 
-### Copy over `.ssh` directory
+### Manually copy over `.ssh` directory
 
+* NOTE: You can store your SSH keys in 1Password, but I don't do this, I keep them on disk.
 * Copy over `~/.ssh` directory.
   * Notes on SSH keys
     * I keep my primary ssh key in `~/.ssh/id_cwoolley-gitlab`, and symlink it to `id_rsa`
@@ -233,7 +234,7 @@ You can just do this via a Slack or email message to yourself, e.g.
     * Copy file from 1password secure note
     * Unzip to home dir: `tar -xvf yyyy-mm-dd-ssh-dir.tgz`
 
-## Use rsync to copy over files
+## Use a tool to bulk copy files from old machine
 
 ### Overview
 
@@ -246,39 +247,13 @@ You can just do this via a Slack or email message to yourself, e.g.
   to a machine which is not owned by GitLab. If you have doubts, use a machine-to-machine solution like AirDrop.
 - All commands are on new machine, unless otherwise specified for `Old machine`  
 
-### Old machine: put public key in authorized_keys
-
-Ensure you have copied your ssh public key (the same one you copied with your .ssh dir earlier) to `~/.ssh/authorized_keys`:
-
-- `cp id_rsa.pub authorized_keys`
-- `chmod 600 authorized_keys`
-
-### Old machine: reverse tunnel to jump box
-
-- `ssh -R 2222:localhost:22 my-local-linux-machine`
-- Leave this terminal running, it's the tunnel connection
-
-## Old machine: enable ssh
-
-- Go to System Settings -> General -> Sharing -> Remote Login. Ensure it's enabled, and click the `(i)` to verify username is same as new
-
-### Add the jump box to the SSH config
-
-- Edit `~/.ssh/config`
-- Add this (`yourusername` should be the same on both old and new machines):
-
-```
-Host old-machine
-  HostName localhost
-  Port 2222
-  User yourusername
-  ProxyJump my-local-linux-machine
-```
-
 ### Copy files
 
 IMPORTANT NOTE: Be sure that you never transfer or store any non-SAFE data to a machine which is not owned by GitLab,
 e.g. via the jump box approach shown above. If you have any doubts, use a machine-to-machine solution such as AirDrop.
+
+Keeping that in mind, use can use one of the methods described below (rsync, sftp, PanicTransmit, AirDrop) or another tool of your choice
+to bulk copy files.
 
 Files/directories to consider copying:
 
@@ -297,6 +272,37 @@ Files/directories to consider copying:
     - Specifically, you may want history files. E.g., `ls -al1 ~/ | grep -i history` on old machine, and copy them over.
       Make sure you shut down any apps which use the files so they don't get overwritten on exit or next use.
 
+### Using rsync or sftp to copy files
+
+#### Old machine: put public key in authorized_keys
+
+Ensure you have copied your ssh public key (the same one you copied with your .ssh dir earlier) to `~/.ssh/authorized_keys`:
+
+- `cp id_rsa.pub authorized_keys`
+- `chmod 600 authorized_keys`
+
+#### Old machine: reverse tunnel to jump box
+
+- `ssh -R 2222:localhost:22 my-local-linux-machine`
+- Leave this terminal running, it's the tunnel connection
+
+#### Old machine: enable ssh
+
+- Go to System Settings -> General -> Sharing -> Remote Login. Ensure it's enabled, and click the `(i)` to verify username is same as new
+
+#### Add the jump box to the SSH config
+
+- Edit `~/.ssh/config`
+- Add this (`yourusername` should be the same on both old and new machines):
+
+```
+Host old-machine
+  HostName localhost
+  Port 2222
+  User yourusername
+  ProxyJump my-local-linux-machine
+```
+
 #### Using rsync
 
 * Example rsync command: `rsync -vlaP old-machine:/Users/username/workspace/ ~/workspace/`. Add more `v`s for more verbosity. Add `--stats` for stats at end.
@@ -310,7 +316,7 @@ If, instead of rsync, you are using an SFTP-based tool to transfer that does not
 - On the linux jump box: `ssh -vvv -N -T -g -o ExitOnForwardFailure=yes -L 0.0.0.0:40022:127.0.0.1:2222 localhost`
 - Then just use SFTP to connect to `my-local-linux-machine` on port `40022`, which will represent the filesystem of `old-machine`
 
-#### Using Airdrop
+### Using Airdrop to copy files
 
 * Open the Airdrop app on new machine
 * Set the discovery preferences to allow the old machine to see the new machine
@@ -754,7 +760,8 @@ and I can't imagine it's gotten better since the Broadcom acquisition. YMMV...
 
 ## JetBrains IDE Setup
 
-**IMPORTANT NOTE: THIS SECTION MAY BE OUT OF DATE: Because I directly copied over all my JetBrains configuration at the filesystem level,
+**IMPORTANT NOTE: SOME PARTS OF THIS SECTION MAY BE OUT OF DATE: Because I [directly copied over](#copy-files)
+all my JetBrains configuration at the filesystem level,
 I did not review or update this section when I got my new machine in August 2025. It is still a good reference if you are setting
 up JetBrains IDEs your machine from scratch, but know that it may be outdated.**
 
