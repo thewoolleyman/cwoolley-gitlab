@@ -645,6 +645,9 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [Alfred](https://www.alfredapp.com/) - Productivity app
   * Unset `Cmd-Space` from MacOS Default spotlight and reassign to Alfred
 
+* [CleanMyMac](https://cleanmymac.com/) - system health tools 
+  * NOTE: If this is a reinstall, go to my.macpaw.com and switch to new device
+
 * ~~MeetingBar (from App Store) - Meeting reminder app~~ (Don't use this anymore, didn't set up)
   * First, ensure you have calendars set up in Mac calendar app.  If you do, do it, then restart the
     MeetingBar app. Otherwise calendars may not show up.
@@ -665,17 +668,16 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     * Time format: 12 hour
     * Check "details in submenu"
 
-* ~~Cron - Calendar app~~ (Don't use this anymore)
+* ~~Cron - Calendar app~~ (I don't use this anymore)
   * cron.com - currently early access, need invite.
   * Connect work and personal accounts
   * Allow notifications
 
-## Other optional stuff (Chad's personal apps/tools)
+## Other optional apps (Chad's notes on personal tools to install)
 
 * Logseq
 * Obsidian
 * Discord
-* CleanMyMac X - Go to my.macpaw.com and switch to new device
 * Kindle (from App Store)
 * Spotify
 * Microsoft Edge
@@ -685,6 +687,121 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 	- Click Open Anyway
 * WhatsApp
 * Facebook Messenger
+
+## Containers
+
+**IMPORTANT NOTE: Before using Docker Desktop, ensure you are in compliance with the Docker license.**
+
+See the following issue for discussion and links on various/preferred tools and support:
+
+https://gitlab.com/gitlab-com/business-technology/team-member-enablement/issue-tracker/-/issues/1787
+
+See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop) for details. Some possible tool options are:
+* Docker engine with multipass
+* Rancher Desktop
+* Colima
+* nerdctl + lima
+* Other???
+
+For my personal usage:
+- I installed Rancher Desktop for GitLab-related usage, using the instructions at
+  https://gitlab.com/gitlab-org/workspaces/gitlab-workspaces-docs/-/blob/main/doc/local-development-environment-setup.md
+- I may still consider installing Docker Desktop, using my own license, for use only with personal projects, if the provided container management
+  CLI tools from Rancher Desktop or other free tools above are not adequate in some cases.
+
+## Virtual Machine Setup
+
+**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
+
+### Ubuntu Server Under Multipass
+
+NOTE: this is a headless ubuntu server, with no desktop or GUI.
+
+* Download and install multipass: 
+  https://multipass.run/?_ga=2.76096215.374552197.1641435791-1890642347.1641435791
+* Install an image with multipass: `multipass launch --name linux1`
+* Run a shell on the image: `multipass exec linux1 -- bash`
+
+### Parallels Desktop Pro
+
+* Download and install Parallels Desktop:
+  https://www.parallels.com/products/desktop/download
+
+#### Ubuntu Desktop under Parallels
+
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new ubuntu virtual machine
+* Notes on using port forwarding to access mac GDK host from ubuntu:
+  * See https://linuxize.com/post/how-to-setup-ssh-tunneling/
+  * Set up SSH keys appropriately
+  * Run port forwarding commands (from ubuntu):
+    * `ssh -L 3000:gdk.test:3000 cwoolley@gdk.test` (rails)
+    * `ssh -L 2222:gdk.test:2222 cwoolley@gdk.test` (git)
+  * Then access at `localhost` from ubuntumind
+
+#### Windows 11 under Parallels
+
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new windows 11 virtual machine
+
+#### MacOS under Parallels
+
+* In parallels macos menu icon, open "Control Center"
+* Click "+" to create a new MacOS virtual machine
+
+### VMWare Fusion
+
+* Install Public Tech Preview 21H1 for Apple Silicon (or later)
+
+#### Ubuntu Desktop under VMWare Fusion
+
+* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
+* Install ISO under VMWare
+  * Choose to boot Ubuntu from grub menu
+  * Choose "normal installation", and check "Install third party software..."
+
+#### Windows 11 under VMWare Fusion
+
+Info:
+
+* See https://machow2.com/windows-on-m1-mac/
+* NOTE: There are many posts about people having issues downloading the Windows 11 ARM ISO, but 
+  the instructions below worked for me.
+
+Setup:
+
+* These steps need to be performed on an existing Windows machine. Alternately, you can contact me
+  (@cwoolley-gitlab) for a copy of the VMDK vmware disk image (it's 10gig).
+  * Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
+    * You have to register for the insider program: https://insider.windows.com/en-us/register
+    * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
+  * Then convert the VHDX file to a vmware-compatible VMDK disk image
+    * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
+    * Note that this will be a windows executatable, so you need a windows machine to run it on!
+    * Use starwind converter to convert the file with the "local file" option
+  * SCP (using Powershell) the VMDK to your macOS workstation
+* On the mac, start VMWare Fusion and create a new virtual machine from the VMDK you 
+  created/obtained above.
+* Networking
+  * Network did not work on install. Skip networking for for now during initial install.
+  * It will work if you use the Microsoft debug adapter. Links with more info:
+    * https://www.reddit.com/r/vmware/comments/obpg4c/windows_11_on_arm/
+    * https://juniper.github.io/contrail-windows-docs/For%20developers/Debugging/Kernel_Debugging/
+    * http://www.mistyprojects.co.uk/documents/BCDEdit/files/commands.6.3.9600.htm#dbgsettings
+  * Steps to setup debug adapter:
+    * The link above says to manually install the debug adapter, but for me it was already 
+      installed (perhaps because it's a preview build)
+    * In VM, set networking to Bridged ("Wifi").
+    * Pick a valid and available IP address to use on your local network (e.g. something in DHCP 
+      range)
+    * In windows VM, open Powershell in administrator mode (right click). This is under "All 
+      Apps" -> "Windows Tools"
+      * `bcdedit /debug on`
+      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with
+         a valid and unused IP in range & yyyyy must be >49152, I used 50000)
+        * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
+* You should now have a basic working windows VM with functional networking. You may want to take a
+  snapshot of the VM at this point before further customization. 
 
 ## JetBrains IDE Setup
 
@@ -818,119 +935,3 @@ I try to keep them updated with the current Jetbrains overridden settings which 
 
 You can use these to configure a new RubyMine installation, or to check for
 any settings which were missed by the SCM-based setup described above.
-
-## Virtual Machine Setup
-
-**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
-
-### Ubuntu Server Under Multipass
-
-NOTE: this is a headless ubuntu server, with no desktop or GUI.
-
-* Download and install multipass: 
-  https://multipass.run/?_ga=2.76096215.374552197.1641435791-1890642347.1641435791
-* Install an image with multipass: `multipass launch --name linux1`
-* Run a shell on the image: `multipass exec linux1 -- bash`
-
-### Parallels Desktop Pro
-
-* Download and install Parallels Desktop:
-  https://www.parallels.com/products/desktop/download
-
-#### Ubuntu Desktop under Parallels
-
-* In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new ubuntu virtual machine
-* Notes on using port forwarding to access mac GDK host from ubuntu:
-  * See https://linuxize.com/post/how-to-setup-ssh-tunneling/
-  * Set up SSH keys appropriately
-  * Run port forwarding commands (from ubuntu):
-    * `ssh -L 3000:gdk.test:3000 cwoolley@gdk.test` (rails)
-    * `ssh -L 2222:gdk.test:2222 cwoolley@gdk.test` (git)
-  * Then access at `localhost` from ubuntumind
-
-#### Windows 11 under Parallels
-
-* In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new windows 11 virtual machine
-
-#### MacOS under Parallels
-
-* In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new MacOS virtual machine
-
-### VMWare Fusion
-
-* Install Public Tech Preview 21H1 for Apple Silicon (or later)
-
-#### Ubuntu Desktop under VMWare Fusion
-
-* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
-* Install ISO under VMWare
-  * Choose to boot Ubuntu from grub menu
-  * Choose "normal installation", and check "Install third party software..."
-
-#### Windows 11 under VMWare Fusion
-
-Info:
-
-* See https://machow2.com/windows-on-m1-mac/
-* NOTE: There are many posts about people having issues downloading the Windows 11 ARM ISO, but 
-  the instructions below worked for me.
-
-Setup:
-
-* These steps need to be performed on an existing Windows machine. Alternately, you can contact me
-  (@cwoolley-gitlab) for a copy of the VMDK vmware disk image (it's 10gig).
-  * Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
-    * You have to register for the insider program: https://insider.windows.com/en-us/register
-    * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
-  * Then convert the VHDX file to a vmware-compatible VMDK disk image
-    * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
-    * Note that this will be a windows executatable, so you need a windows machine to run it on!
-    * Use starwind converter to convert the file with the "local file" option
-  * SCP (using Powershell) the VMDK to your macOS workstation
-* On the mac, start VMWare Fusion and create a new virtual machine from the VMDK you 
-  created/obtained above.
-* Networking
-  * Network did not work on install. Skip networking for for now during initial install.
-  * It will work if you use the Microsoft debug adapter. Links with more info:
-    * https://www.reddit.com/r/vmware/comments/obpg4c/windows_11_on_arm/
-    * https://juniper.github.io/contrail-windows-docs/For%20developers/Debugging/Kernel_Debugging/
-    * http://www.mistyprojects.co.uk/documents/BCDEdit/files/commands.6.3.9600.htm#dbgsettings
-  * Steps to setup debug adapter:
-    * The link above says to manually install the debug adapter, but for me it was already 
-      installed (perhaps because it's a preview build)
-    * In VM, set networking to Bridged ("Wifi").
-    * Pick a valid and available IP address to use on your local network (e.g. something in DHCP 
-      range)
-    * In windows VM, open Powershell in administrator mode (right click). This is under "All 
-      Apps" -> "Windows Tools"
-      * `bcdedit /debug on`
-      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with
-         a valid and unused IP in range & yyyyy must be >49152, I used 50000)
-        * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
-* You should now have a basic working windows VM with functional networking. You may want to take a
-  snapshot of the VM at this point before further customization. 
-
-
-## Containers
-
-**IMPORTANT NOTE: Before using Docker Desktop, ensure you are in compliance with the Docker license.**
-
-See the following issue for discussion and links on various/preferred tools and support:
-
-https://gitlab.com/gitlab-com/business-technology/team-member-enablement/issue-tracker/-/issues/1787
-
-See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop) for details. Some possible tool options are:
-* Docker engine with multipass
-* Rancher Desktop
-* Colima
-* nerdctl + lima
-* Other???
-
-For my personal usage:
-- I installed Rancher Desktop for GitLab-related usage, using the instructions at
-  https://gitlab.com/gitlab-org/workspaces/gitlab-workspaces-docs/-/blob/main/doc/local-development-environment-setup.md
-- I may still consider installing Docker Desktop, using my own license, for use only with personal projects, if the provided container management
-  CLI tools from Rancher Desktop are not adequate in some cases.
