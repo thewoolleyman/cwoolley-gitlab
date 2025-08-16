@@ -125,6 +125,10 @@ Click `Apple` menu on taskbar and `System Settings`
     * Turn off "Automatically Adjust Brightness"
     * Turn off "True Tone"
   * Advanced: Turn off “Allow your pointer and keyboard to move between any nearby Mac or iPad”
+* Desktop and Dock - hide, so there's more screen real estate:
+  * Size: Medium
+  * Magnification: Medium
+  * Automatically hide and show the dock
 
 ### macOS Other Settings
 
@@ -711,97 +715,42 @@ For my personal usage:
 
 ## Virtual Machine Setup
 
-**IMPORTANT NOTE: THIS SECTION IS OUT OF DATE: I have not yet completed this setup for my new machine which I received in August 2025.**
+This section gives some options for running full (non-containerized) Virtual Machines under MacOS.
 
 ### Ubuntu Server Under Multipass
 
 NOTE: this is a headless ubuntu server, with no desktop or GUI.
 
 * Download and install multipass: 
-  https://multipass.run/?_ga=2.76096215.374552197.1641435791-1890642347.1641435791
+  https://multipass.run
 * Install an image with multipass: `multipass launch --name linux1`
 * Run a shell on the image: `multipass exec linux1 -- bash`
 
+### VirtualBox
+
+* https://www.virtualbox.org/
+* 
+
 ### Parallels Desktop Pro
 
-* Download and install Parallels Desktop:
-  https://www.parallels.com/products/desktop/download
-
-#### Ubuntu Desktop under Parallels
-
+* Download and install Parallels Desktop: https://www.parallels.com/products/desktop/download
 * In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new ubuntu virtual machine
+* Click "+" to create a new virtual machine (Ubuntu, Windows 11, or MacOS)
 * Notes on using port forwarding to access mac GDK host from ubuntu:
   * See https://linuxize.com/post/how-to-setup-ssh-tunneling/
   * Set up SSH keys appropriately
   * Run port forwarding commands (from ubuntu):
     * `ssh -L 3000:gdk.test:3000 cwoolley@gdk.test` (rails)
     * `ssh -L 2222:gdk.test:2222 cwoolley@gdk.test` (git)
-  * Then access at `localhost` from ubuntumind
-
-#### Windows 11 under Parallels
-
-* In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new windows 11 virtual machine
-
-#### MacOS under Parallels
-
-* In parallels macos menu icon, open "Control Center"
-* Click "+" to create a new MacOS virtual machine
+  * Then access at `localhost` from ubuntu
 
 ### VMWare Fusion
 
-* Install Public Tech Preview 21H1 for Apple Silicon (or later)
+According to [this Wikipedia article](https://en.wikipedia.org/wiki/VMware_Fusion#History), since Broadcom acquired VMWare, they have made
+VMWare Fusion free.
 
-#### Ubuntu Desktop under VMWare Fusion
-
-* Download ubuntu ARM ISO version from https://cdimage.ubuntu.com/daily-live/current/
-* Install ISO under VMWare
-  * Choose to boot Ubuntu from grub menu
-  * Choose "normal installation", and check "Install third party software..."
-
-#### Windows 11 under VMWare Fusion
-
-Info:
-
-* See https://machow2.com/windows-on-m1-mac/
-* NOTE: There are many posts about people having issues downloading the Windows 11 ARM ISO, but 
-  the instructions below worked for me.
-
-Setup:
-
-* These steps need to be performed on an existing Windows machine. Alternately, you can contact me
-  (@cwoolley-gitlab) for a copy of the VMDK vmware disk image (it's 10gig).
-  * Download Windows 11 for ARM via Windows insider program: https://insider.windows.com/en-us/
-    * You have to register for the insider program: https://insider.windows.com/en-us/register
-    * Then go directly to this download link: https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewARM64?wa=wsignin1.0
-  * Then convert the VHDX file to a vmware-compatible VMDK disk image
-    * You need Starwind V2V converter (free with registration): https://www.starwindsoftware.com/starwind-v2v-converter#download
-    * Note that this will be a windows executatable, so you need a windows machine to run it on!
-    * Use starwind converter to convert the file with the "local file" option
-  * SCP (using Powershell) the VMDK to your macOS workstation
-* On the mac, start VMWare Fusion and create a new virtual machine from the VMDK you 
-  created/obtained above.
-* Networking
-  * Network did not work on install. Skip networking for for now during initial install.
-  * It will work if you use the Microsoft debug adapter. Links with more info:
-    * https://www.reddit.com/r/vmware/comments/obpg4c/windows_11_on_arm/
-    * https://juniper.github.io/contrail-windows-docs/For%20developers/Debugging/Kernel_Debugging/
-    * http://www.mistyprojects.co.uk/documents/BCDEdit/files/commands.6.3.9600.htm#dbgsettings
-  * Steps to setup debug adapter:
-    * The link above says to manually install the debug adapter, but for me it was already 
-      installed (perhaps because it's a preview build)
-    * In VM, set networking to Bridged ("Wifi").
-    * Pick a valid and available IP address to use on your local network (e.g. something in DHCP 
-      range)
-    * In windows VM, open Powershell in administrator mode (right click). This is under "All 
-      Apps" -> "Windows Tools"
-      * `bcdedit /debug on`
-      * `bcdedit /dbgsettings NET HOSTIP:xxx.xxx.xxx.xxx PORT:yyyyy` (replace xxx.xxx.xxx.xxx with
-         a valid and unused IP in range & yyyyy must be >49152, I used 50000)
-        * e.g.: `bcdedit /dbgsettings NET HOSTIP:10.0.100.130 PORT:50000`
-* You should now have a basic working windows VM with functional networking. You may want to take a
-  snapshot of the VM at this point before further customization. 
+But I'm not going to try it again. Even as a paid tool, VMWare Fusion was still inferior to Parallels the last time I compared them (~4 years ago),
+and I can't imagine it's gotten better since the Broadcom acquisition. YMMV...
 
 ## JetBrains IDE Setup
 
