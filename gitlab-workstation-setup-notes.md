@@ -853,6 +853,7 @@ TODO: Find a way to easily export this list instead of manually curating it.
     * I ended up disabling this one, I never used it much. I either use the GitLab Web UI or the GitLab Merge Requests plugin. It also seems to crash frequently and clutter the context menus with useless stuff.
   * [GitLab Merge Requests](https://plugins.jetbrains.com/plugin/18689-gitlab-merge-requests) - still in beta and seems buggy, but UI is promising. In-IDE diffs and inline commenting on diffs.
 * AI Coding Assistance Plugins
+  * GitLab Duo
   * [GitHub CoPilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)
   * [Tabnine](https://plugins.jetbrains.com/plugin/12798-tabnine-ai-code-completion-js-java-python-ts-rust-go-php--more)
 * Personal Productivity
@@ -869,7 +870,6 @@ TODO: Find a way to easily export this list instead of manually curating it.
   * TOML
   * Vue.js
   * Makefile Language
-  * 
 
 #### GitLab-specific Rubymine Project Structure Settings
 
