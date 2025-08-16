@@ -714,10 +714,22 @@ See [Docker Desktop section in GitLab handbook](https://about.gitlab.com/handboo
 * Other???
 
 For my personal usage:
-- I installed Rancher Desktop for GitLab-related usage, using the instructions at
+- I installed Rancher Desktop for GitLab-related usage (e.g. Workspaces), using the instructions (using `containerd` at
   https://gitlab.com/gitlab-org/workspaces/gitlab-workspaces-docs/-/blob/main/doc/local-development-environment-setup.md
-- I may still consider installing Docker Desktop, using my own license, for use only with personal projects, if the provided container management
-  CLI tools from Rancher Desktop or other free tools above are not adequate in some cases.
+- I still installed Docker Desktop, using my own license, for use only with personal projects, to provided easy and standardized
+  usage of the `docker` CLI and socket, independent of Rancher's container executables installation.
+- In Rancher Desktop, I ensure that I do NOT let it manaage my path, and instead manually manage it to ensure it ends up at the end
+  of the path rather than the beginning, so other standard `docker` executables take precedence.
+- Here's the entry from my `~/.zshrc` (the last line):
+
+```
+# Ensure that the official Docker CLI's executables take precedence over Rancher Desktop's,
+# by ensuring `~/.rd/bin` gets added to the END of the path rather than the BEGINNING.
+#
+# Also ensure you keep Rancher Desktop's preferences for
+# `Application -> Environment -> Configure Path` set to "Manual"
+export PATH="$PATH:/Users/cwoolley/.rd/bin"
+```
 
 ## Virtual Machine Setup
 
