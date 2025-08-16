@@ -730,7 +730,7 @@ For my personal usage:
 #
 # - Configure Docker Desktop to store executables in `~/.docker/bin`
 # - Set Rancher Desktop's preferences for `Application -> Environment -> Configure Path` set to "Manual"
-export PATH="$PATH:/Users/YOURUSER/.docker/bin:/Users/YOURUSER/.rd/bin"
+export PATH="/Users/cwoolley/.docker/bin:/Users/cwoolley/.rd/bin:$PATH"
 ```
 
 ## Virtual Machine Setup
