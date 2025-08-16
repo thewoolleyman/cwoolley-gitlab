@@ -724,11 +724,13 @@ For my personal usage:
 
 ```
 # Ensure that the official Docker CLI's executables take precedence over Rancher Desktop's,
-# by ensuring `~/.rd/bin` gets added to the END of the path rather than the BEGINNING.
+# by ensuring `~/.docker/bin` gets added to the path BEFORE `~/.rd/bin`.
 #
-# Also ensure you keep Rancher Desktop's preferences for
-# `Application -> Environment -> Configure Path` set to "Manual"
-export PATH="$PATH:/Users/cwoolley/.rd/bin"
+# Ensure that you:
+#
+# - Configure Docker Desktop to store executables in `~/.docker/bin`
+# - Set Rancher Desktop's preferences for `Application -> Environment -> Configure Path` set to "Manual"
+export PATH="$PATH:/Users/YOURUSER/.docker/bin:/Users/YOURUSER/.rd/bin"
 ```
 
 ## Virtual Machine Setup
