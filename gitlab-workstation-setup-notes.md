@@ -139,6 +139,7 @@ Click `Apple` menu on taskbar and `System Settings`
     * Check Keychain and Find My Mac
 
 * Finder
+  * Menu -> View -> Show Path Bar
   * Settings
     * General
       * Show hard disks and connected servers
