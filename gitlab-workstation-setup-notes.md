@@ -659,6 +659,13 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
 * [CleanMyMac](https://cleanmymac.com/) - system health tools 
   * NOTE: If this is a reinstall, go to my.macpaw.com and switch to new device
 
+* [BetterDisplay](https://github.com/waydabber/BetterDisplay) - power user tool for display/resolution settings
+  * If you are having issues with an external monitor, or getting MacOS to make a monitor do exactly what you want, this tool can help.
+  * Specifically, it can spoof or override EDID attributes, which may be necessary to fix problems
+    with MacOS incorrectly mirroring or "forgetting" settings on newer Macs and/or large monitors which are also Smart TVs
+  * As noted on Apple’s forums, "Better Display Pro allows you to change the display role from TV to
+    Monitor and the annoying mirroring gets fixed." https://discussions.apple.com/thread/255885031?sortBy=rank
+
 * ~~MeetingBar (from App Store) - Meeting reminder app~~ (Don't use this anymore, didn't set up)
   * First, ensure you have calendars set up in Mac calendar app.  If you do, do it, then restart the
     MeetingBar app. Otherwise calendars may not show up.
