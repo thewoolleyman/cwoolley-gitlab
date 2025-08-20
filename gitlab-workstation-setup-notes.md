@@ -665,6 +665,17 @@ Homebrew casks or other package managers to install and manage macOS `*.app` app
     with MacOS incorrectly mirroring or "forgetting" settings on newer Macs and/or large monitors which are also Smart TVs
   * As noted on Apple’s forums, "Better Display Pro allows you to change the display role from TV to
     Monitor and the annoying mirroring gets fixed." https://discussions.apple.com/thread/255885031?sortBy=rank
+  * For my 2024 Macbook and Samsung Odyssey G70NC monitor, I did the following in Better Display preferences:
+    * Displays section, expand the section for the monitor
+      * System Configuration and Flexible Scaling: Enable
+        * Expand "More system configuration options" subsection
+          * Edit display role: Enable
+          * Edited display role: "Computer monitor"
+    * Display EDID Section
+      * Use "Retrieve EDID", and copy the base64-encoded string at the bottom
+      * Load Custom EDID...
+        * Click "Paste Base64" and paste the value from above
+        * Click "Apply Custom EDID Now", follow all prompts
 
 * ~~MeetingBar (from App Store) - Meeting reminder app~~ (Don't use this anymore, didn't set up)
   * First, ensure you have calendars set up in Mac calendar app.  If you do, do it, then restart the
