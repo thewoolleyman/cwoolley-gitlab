@@ -159,6 +159,18 @@ Click `Apple` menu on taskbar and `System Settings`
   * Show hidden files in Finder: `defaults write com.apple.finder AppleShowAllFiles True; killall Finder`
     * **_`Cmd-Shift-.` (period) to toggle hidden files in finder windows_**
 
+* Make file types open in desired app by default. This is useful, for example, when you want `Cmd-Click` on a `*.rb` file link in iTerm
+  to automatically open in RubyMine (instead of the default XCode)
+  * Open Finder
+  * Find some file of the type you want, or just make one, e.g.: `touch /tmp/test.rb`
+  * Right click the file and pick `Get info`
+  * Expand `Open with`
+  * In the dropdown pick `Other`
+  * Select the app you want to use. **NOTE: Jetbrains apps like RubyMine installed via Jetbrains Toolbox are in the
+    `Applications` directory under your `HOME` directory, _NOT_ the `Applications` directory in the root of the volume.
+  * Click `Change all` and confirm
+  * Repeat for any other file types you want to automatically open in non-default apps.
+
 * set nopasswd sudoers - `sudo visudo`, change "`%admin ...`" line to read: `%admin   ALL=(ALL) NOPASSWD:ALL`
 
 * Show purchases from personal Apple account in App Store (not positive if this is right, it only has to be done once, not on new machines)
