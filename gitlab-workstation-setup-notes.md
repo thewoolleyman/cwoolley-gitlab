@@ -423,6 +423,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ## Other CLI setup
 
+* Make `/usr/local/bin` writeable by current user. This is useful for tools which want to drop executables there, such as Jetbrains toolbox.
+  - `sudo chmod g+w /usr/local/bin`
+  - `sudo dscl . -append /Groups/wheel GroupMembership $USER`
+  - Log out and log back in
 * Git command prompt
   * I use the `~/.git-prompt.sh` script as described in
     [this blog post](https://about.gitlab.com/blog/2016/12/08/git-tips-and-tricks/#see-the-repository-status-in-your-terminals-prompt),
