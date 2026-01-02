@@ -427,6 +427,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
   - `sudo chmod g+w /usr/local/bin`
   - `sudo dscl . -append /Groups/wheel GroupMembership $USER`
   - Log out and log back in
+
 * Git command prompt
   * I use the `~/.git-prompt.sh` script as described in
     [this blog post](https://about.gitlab.com/blog/2016/12/08/git-tips-and-tricks/#see-the-repository-status-in-your-terminals-prompt),
@@ -438,11 +439,19 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
     GIT_PS1_SHOWDIRTYSTATE=true
     GIT_PS1_SHOWUNTRACKEDFILES=true
     GIT_PS1_SHOWUPSTREAM="auto verbose name git"
-    source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
-    
-    # shows branch name
-    precmd () { __git_ps1 "%1~" "$ " " (%s)" }
+     source "$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
+
+     # shows branch name
+     precmd () { __git_ps1 "%1~" "$ " " (%s)" }
+     ```
+
+* Zsh interactive comments
+  * Add to shell config to allow comments on pasted command lines:
+    ```sh
+    # Allow comments on pasted command lines. E.g. `export FOO=bar # note` - don't try to use # note as a filename
+    setopt interactive_comments
     ```
+
 * GitLab CLI: https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/#install-the-cli
   * `brew install glab`
 * Add `gst` alias in `~/.zshrc`: `alias gst='git status'`
