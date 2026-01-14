@@ -4,7 +4,7 @@
 
 <a href="https://www.linkedin.com/in/thewoolleyman/"><img align="left" src="https://img.shields.io/badge/LinkedIn-0A66C2?&style=for-the-badge&logo=LinkedIn&logoColor=white" /></a>
 <a href="mailto:cwoolley@gitlab.com"><img align="left" src="https://img.shields.io/badge/Email-EA4335?&style=for-the-badge&logo=Gmail&logoColor=white" /></a>
-<a href="https://calendly.com/cwoolley-gitlab/15min"><img align="left" src="https://img.shields.io/badge/Schedule a Meeting-purple?&style=for-the-badge&logo=Google Calendar&logoColor=white" /></a>
+<a href="https://calendly.com/cwoolley/15min"><img align="left" src="https://img.shields.io/badge/Schedule a Meeting-purple?&style=for-the-badge&logo=Google Calendar&logoColor=white" /></a>
 <a href="https://gitlab.zoom.us/my/gitlab.chadwoolley"><img align="left" src="https://img.shields.io/badge/Zoom-brightgreen?&style=for-the-badge&logo=Google Calendar&logoColor=white" /></a>
 &nbsp;
 
