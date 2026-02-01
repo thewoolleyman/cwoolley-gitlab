@@ -114,6 +114,7 @@ Click `Apple` menu on taskbar and `System Settings`
     control on Apple keyboard. Use `Ctrl-Cmd-Space` instead to bring up emoji and symbols "Character Viewer" window.
 * Trackpad
   * Point and Click -> Force Click and haptic feedback: Turn Off (always causes me to lose highlighting in my way when I'm drag-highlighing with the trackpad)
+  * Point and Click -> Look Up & Data Detectors: Uncheck (prevents the "Look Up" dictionary/Siri Knowledge window from popping up on accidental three-finger taps or force clicks)
   * More Gestures: Uncheck "Swipe between pages"
 * Battery
   * Options
